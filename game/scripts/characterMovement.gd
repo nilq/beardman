@@ -31,6 +31,6 @@ func _physics_process(delta):
 	if movement.length() == 0:
 		$Lowerbody.play("still")
 	else:
-		$Lowerbody.play("default")
+		$Lowerbody.play("walking")
 
 	move_and_collide(movement * speed)
