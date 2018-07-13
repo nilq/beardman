@@ -1,51 +1,40 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://scripts/characterMovement.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://sound/whip.wav" type="AudioStream" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-radius = 10.0
+extents = Vector2( 10, 10 )
 
 [node name="World" type="Node2D" index="0"]
 
-[node name="Player" type="KinematicBody2D" parent="." index="0"]
+position = Vector2( -41.4818, 32.2873 )
 
-position = Vector2( 504.622, 256.262 )
+[node name="KinematicBody2D" type="KinematicBody2D" parent="." index="0"]
+
+position = Vector2( 210.61, 390.249 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Upperbody" type="Sprite" parent="Player" index="0"]
+[node name="Sprite" type="Sprite" parent="KinematicBody2D" index="0"]
 
-position = Vector2( -1.67023, -3.05176e-05 )
+position = Vector2( -1.67023, -3.05176e-005 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="1"]
 
-shape = SubResource( 1 )
-
-[node name="Beard" type="Sprite" parent="Player" index="2"]
-
-position = Vector2( 29.3205, -10.3026 )
-scale = Vector2( 0.407535, 0.376114 )
-texture = ExtResource( 2 )
-centered = false
-region_rect = Rect2( 0, 0, 60, 60 )
-_sections_unfolded = [ "Offset", "Region" ]
-
-[node name="GunTween" type="Tween" parent="Player" index="3"]
-
-repeat = false
-playback_process_mode = 1
-playback_speed = 1.0
-playback/active = false
-playback/repeat = false
-playback/speed = 1.0
+position = Vector2( 4.10107, -2.05054 )
+shape = SubResource( 3 )
 
 [node name="WhipSound" type="AudioStreamPlayer2D" parent="Player" index="4"]
 
