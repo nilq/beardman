@@ -1,32 +1,38 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://scripts/characterMovement.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-radius = 10.0
+extents = Vector2( 10, 10 )
 
 [node name="World" type="Node2D" index="0"]
 
+position = Vector2( -41.4818, 32.2873 )
+
 [node name="KinematicBody2D" type="KinematicBody2D" parent="." index="0"]
 
-position = Vector2( 501.055, 258.878 )
+position = Vector2( 210.61, 390.249 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D" index="0"]
 
-position = Vector2( -1.67023, -3.05176e-05 )
-texture = ExtResource( 1 )
+position = Vector2( -1.67023, -3.05176e-005 )
+texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="1"]
 
-shape = SubResource( 1 )
+position = Vector2( 4.10107, -2.05054 )
+shape = SubResource( 3 )
 
 
