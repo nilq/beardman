@@ -3,11 +3,14 @@ extends Sprite
 onready var beard       = $Beard
 
 onready var BEARD_POS   = self.get_position()
-onready var BEARD_SCALE = self.get_scale()
+onready var BEARD_SCALE = Vector2(self.get_scale().x, self.get_scale().y / 1.25)
 
 var is_bearding = false
 var beard_time  = 0.075
 
+
+func _ready():
+	set_modulate(Color(1, 1, 1, 0))
 
 
 func _input(event):
@@ -17,6 +20,14 @@ func _input(event):
 
 
 func fire(mouse_pos):
+	var fade = $FadeTween
+	
+	fade.interpolate_property(self, "modulate", 
+	    Color(1, 1, 1, 0), Color(1, 1, 1, 1), 0.1, 
+	    Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
+		
+	fade.start()
+	
 	var sound = $WhipSound
 	
 	sound.set_pitch_scale(rand_range(0.95, 1.25))
@@ -28,12 +39,12 @@ func fire(mouse_pos):
 	var beard_pos   = self.get_position()
 	
 	var distance   = get_viewport().get_mouse_position().distance_to(self.get_global_position())
-	var dist_scale = distance / self.get_texture().get_size().x
+	var dist_scale = distance / (self.get_texture().get_size().y + 10)
 
 
 	var tween = $GunTween
 	tween.interpolate_property(self, "scale",
-	                BEARD_SCALE, Vector2(dist_scale, BEARD_SCALE.y), beard_time,
+	                BEARD_SCALE, Vector2(BEARD_SCALE.x, dist_scale), beard_time,
 	                Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
 					
 	tween.interpolate_callback(self, beard_time, "retract_beard", distance)
@@ -54,6 +65,14 @@ func retract_beard(distance):
 
 	tween.start()
 
-	
+
 func reload_beard():
 	is_bearding = false
+	
+	var fade = $FadeTween
+	
+	fade.interpolate_property(self, "modulate", 
+	    Color(1, 1, 1, 1), Color(1, 1, 1, 0), 0.1, 
+	    Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
+	
+	fade.start()

@@ -26,4 +26,11 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
 		x = -1
 
-	move_and_collide(Vector2(x, y).normalized() * speed)
+	var movement = Vector2(x, y).normalized()
+	
+	if movement.length() == 0:
+		$Lowerbody.play("still")
+	else:
+		$Lowerbody.play("walking")
+
+	move_and_collide(movement * speed)
