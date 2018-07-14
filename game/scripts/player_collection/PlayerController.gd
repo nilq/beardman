@@ -59,8 +59,16 @@ func _physics_process(delta):
 	self.update_camera(self.get_position())
 
 func apply_damage(amount):
-	#print("outch! On a scale from one to ten this is a solid " + str(amount))
 	sanity.sanity_set(sanity.sanity_get() - amount)
+	
+	var animation = sanity.get_node("AnimationPlayer")
+	if(amount > 0): 
+		animation.stop(true)
+		animation.play("Damage")
+	else:
+		animation.stop(true)
+		animation.get_node("Blood").set_modulate(Color(225, 225, 225, 0))
+		animation.play("Healing")
 
 func do_movement():
 	var x = 0

@@ -7,6 +7,8 @@ var _sanityDrainRate = 0.5
 var _SanityBarSizeX
 var _SanityBarSizeY
 
+onready var animation = $AnimationPlayer
+
 func _ready():
 	_SanityBarSizeX = $SanityContainer/SanityBar.rect_size.x
 	_SanityBarSizeY = $SanityContainer/SanityBar.rect_size.y
