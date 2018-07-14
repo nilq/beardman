@@ -8,10 +8,12 @@ var y = 0
 var drag_margin_left = 0.3
 var drag_margin_right = 0.7
 
-var right_limit = 1000000
-var left_limit = -1000000
-
 var screen_size
+
+var right_limit  = INF
+var left_limit   = -INF
+var bottom_limit = INF
+var top_limit    = -INF
 
 
 func _ready():
@@ -67,12 +69,6 @@ func update_camera(character_pos):
 		
 	
 	var room_sprite = self.get_node("../Room")
-	
-	var top_limit    = 0
-	var bottom_limit = room_sprite.get_position().y + room_sprite.get_texture().get_height()
-	var left_limit   = 0
-	var right_limit  = room_sprite.get_position().x + room_sprite.get_texture().get_width()
-	
 
 	new_camera_pos.x = clamp(new_camera_pos.x, left_limit + screen_size.x * 0.5, right_limit - screen_size.x * 0.5)
 	new_camera_pos.y = clamp(new_camera_pos.y, top_limit + screen_size.y * 0.5, bottom_limit - screen_size.y * 0.5)
