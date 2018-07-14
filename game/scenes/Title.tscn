@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://sprites/Title/titlebg.png" type="Texture" id=1]
+[ext_resource path="res://sound/Lumme/Journey Forth.wav" type="AudioStream" id=2]
+[ext_resource path="res://sprites/Title/title1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/Title/title2.png" type="Texture" id=4]
+[ext_resource path="res://sprites/Title/title3.png" type="Texture" id=5]
+[ext_resource path="res://sprites/Title/title4.png" type="Texture" id=6]
+[ext_resource path="res://sprites/Title/title5.png" type="Texture" id=7]
+[ext_resource path="res://sprites/Title/butt_start.png" type="Texture" id=8]
+[ext_resource path="res://scripts/StartGameButton.gd" type="Script" id=9]
+[ext_resource path="res://sprites/Title/titletext.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Node" type="Node" index="0"]
+
+[node name="titlebg" type="Sprite" parent="." index="0"]
+
+position = Vector2( 960, 540 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
+
+stream = ExtResource( 2 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+_sections_unfolded = [ "Pause" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
+
+position = Vector2( 980, 719 )
+frames = SubResource( 1 )
+animation = "default"
+playing = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="TextureButton" type="TextureButton" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 250.0
+margin_top = 50.0
+margin_right = 710.0
+margin_bottom = 266.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 8 )
+expand = true
+script = ExtResource( 9 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="titletext" type="Sprite" parent="." index="4"]
+
+position = Vector2( 1170, 490 )
+scale = Vector2( 0.953125, 0.953125 )
+texture = ExtResource( 10 )
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]
+
+
