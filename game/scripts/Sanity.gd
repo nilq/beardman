@@ -2,7 +2,7 @@ extends Node
 
 
 var _sanityLevel = 100 setget sanity_set, sanity_get
-var _sanityDrainRate = 3
+var _sanityDrainRate = 0.5
 
 var _SanityBarSizeX
 var _SanityBarSizeY
@@ -24,4 +24,4 @@ func _process(delta):
 	
 func updateSanityBar():
 	$SanityContainer/SanityBar.rect_size = Vector2(_SanityBarSizeX*(_sanityLevel/100),_SanityBarSizeY*1)
-	get_tree().root.get_node()
+	
