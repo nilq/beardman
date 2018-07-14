@@ -1,7 +1,5 @@
 extends Sprite
 
-onready var beard       = $Beard
-
 onready var BEARD_POS   = self.get_position()
 onready var BEARD_SCALE = Vector2(self.get_scale().x, self.get_scale().y / 1.25)
 
@@ -38,7 +36,21 @@ func fire(mouse_pos):
 	var beard_scale = BEARD_SCALE
 	var beard_pos   = self.get_position()
 	
-	var distance   = get_viewport().get_mouse_position().distance_to(self.get_global_position())
+	# Calculate beard collisions
+	var space_state = get_world_2d().direct_space_state
+	var result 		= space_state.intersect_ray(self.get_global_position(), get_viewport().get_mouse_position())
+
+	var point  	   = get_viewport().get_mouse_position()
+	
+	if result:
+		var smash = $PunchSound
+	
+		smash.set_pitch_scale(rand_range(0.9, 1))		
+		smash.play()
+
+		point = result.position
+
+	var distance   = point.distance_to(self.get_global_position())
 	var dist_scale = distance / (self.get_texture().get_size().y + 10)
 
 
