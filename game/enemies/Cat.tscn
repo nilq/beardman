@@ -8,7 +8,7 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 15.0768
+radius = 35.8872
 height = 44.4088
 
 [sub_resource type="SpriteFrames" id=2]
@@ -20,9 +20,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Enemy_Cat" type="KinematicBody2D"]
+[node name="Enemy_Cat" type="KinematicBody2D" index="0"]
 
-position = Vector2( 42.673, 71.4449 )
+position = Vector2( 23.0292, 59.1676 )
 rotation = -1.57146
 input_pickable = false
 collision_layer = 1
@@ -30,9 +30,6 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Collision" type="CollisionShape2D" parent="." index="0"]
 
@@ -42,11 +39,12 @@ shape = SubResource( 1 )
 
 [node name="Movement" type="AnimatedSprite" parent="." index="1"]
 
-position = Vector2( 1.1123, 14.2565 )
+position = Vector2( 2.34087, 13.0297 )
 rotation = 1.5789
 scale = Vector2( 0.325677, 0.291404 )
 frames = SubResource( 2 )
 animation = "default"
+frame = 2
 playing = true
 
 

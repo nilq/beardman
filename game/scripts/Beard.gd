@@ -32,7 +32,6 @@ func fire():
 	
 	sound.play()
 	
-	
 	var beard_scale = BEARD_SCALE
 	var beard_pos   = self.get_position()
 	

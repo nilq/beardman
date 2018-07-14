@@ -2,14 +2,32 @@ extends Node2D
 
 onready var world = get_node("..")
 onready var enemy_cat = preload( "res://enemies/Cat.tscn" ).instance()
-var catCounter = 0
 
-func _process(delta):
+var cat_counter = 0
+var cat_range   = 100
+
+func _ready():
+	self.start_timer()
+
+func start_timer():
+	var timer = Timer.new()
+
+	timer.set_wait_time(2.5)
+	timer.connect("timeout", self, "spawn_cat", [timer])
 	
-	if catCounter < 50:
+	self.add_child(timer)
+	
+	timer.start()
+
+func spawn_cat(timer):
+	if cat_counter < 50:
 		var cat = enemy_cat.duplicate()
-		cat.set_position(self.get_position())		
+		cat.set_position(self.get_position() + Vector2(rand_range(-cat_range, cat_range), rand_range(-cat_range, cat_range)))
 		
 		world.add_child(cat)
-
-		catCounter += 1
+	
+		cat_counter += 1
+		
+		timer.stop()
+		
+		self.start_timer()
