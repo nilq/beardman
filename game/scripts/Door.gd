@@ -7,9 +7,13 @@ var can_trigger = true
 func _ready():
 	var children = get_node("..").get_children()
 	
+	randomize()
+	
 	door_friend  = children[rand_range(0, children.size())]
 	
 	while door_friend == self:
+		randomize()
+
 		door_friend  = children[rand_range(0, children.size())]
 		
 func get_door():
