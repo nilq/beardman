@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://scripts/characterMovement.gd" type="Script" id=1]
+[ext_resource path="res://scripts/player_collection/PlayerController.gd" type="Script" id=1]
 [ext_resource path="res://sprites/standing.png" type="Texture" id=2]
 [ext_resource path="res://sprites/leftleg.png" type="Texture" id=3]
 [ext_resource path="res://sprites/rightleg.png" type="Texture" id=4]
@@ -11,6 +11,7 @@
 [ext_resource path="res://sound/punch.wav" type="AudioStream" id=9]
 [ext_resource path="res://sound/meow.wav" type="AudioStream" id=10]
 [ext_resource path="res://sound/splash.wav" type="AudioStream" id=11]
+[ext_resource path="res://scenes/Sanity.tscn" type="PackedScene" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -32,7 +33,7 @@ custom_solver_bias = 0.0
 radius = 20.782
 height = 9.56995
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 position = Vector2( 460, 1080 )
 rotation = -0.862941
@@ -60,7 +61,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Upperbody" type="Sprite" parent="." index="1"]
 
-position = Vector2( -1.67023, -3.05176e-05 )
+position = Vector2( -1.67023, -3.05176e-005 )
 rotation = -1.5708
 scale = Vector2( 0.5, 0.5 )
 z_index = 100
@@ -76,6 +77,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Beard" type="Sprite" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 39.3419, 103.27 )
 rotation = -1.5708
 scale = Vector2( 0.407535, 0.376114 )
@@ -174,5 +176,7 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Material" ]
+
+[node name="Sanity" parent="." index="5" instance=ExtResource( 12 )]
 
 

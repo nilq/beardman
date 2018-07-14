@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blood.png-dde5a3ebe1d053f923d1fbeb70a50e85.stex"
+path="res://.import/blood_1.png-6b1489107f670d6cf837e059a80d5985.stex"
 
 [deps]
 
-source_file="res://sprites/blood.png"
-dest_files=[ "res://.import/blood.png-dde5a3ebe1d053f923d1fbeb70a50e85.stex" ]
+source_file="res://sprites/cat/blood_1.png"
+dest_files=[ "res://.import/blood_1.png-6b1489107f670d6cf837e059a80d5985.stex" ]
 
 [params]
 

@@ -134,7 +134,7 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( 315.89, -17.1879, 120.212, 169.172, 306.572, 318.259, 427.706, 155.195 )
 
-[node name="Player" type="KinematicBody2D" parent="." index="1"]
+[node name="CatSpawner" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 452.41, 639.806 )
 rotation = -0.862941

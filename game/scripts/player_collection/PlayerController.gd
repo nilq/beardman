@@ -16,7 +16,7 @@ var right_limit  = INF
 var left_limit   = -INF
 var bottom_limit = INF
 var top_limit    = -INF
-
+onready var sanity = $Sanity
 
 var door
 
@@ -60,7 +60,8 @@ func _physics_process(delta):
 	self.update_camera(self.get_position())
 
 func apply_damage(amount):
-	print("outch! On a scale from one to ten this is a solid " + str(amount))
+	#print("outch! On a scale from one to ten this is a solid " + str(amount))
+	sanity.sanity_set(sanity.sanity_get() - amount)
 
 func do_movement():
 	var x = 0

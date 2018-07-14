@@ -72,9 +72,9 @@ func fire():
 			
 			new_blood.set_rotation(rand_range(-360, 360))
 			new_blood.set_position(result.position)
-			
-			self.get_node("../../").add_child(new_blood)
-
+			var blood_file = "blood_" + str(ceil(rand_range(0.1, 2.9)))
+			new_blood.set_texture(load("res://sprites/cat/" + blood_file + ".png"))
+			self.get_node("../..").add_child(new_blood)
 			result.collider.queue_free()
 
 	var distance   = point.distance_to(self.get_global_position())
