@@ -17,7 +17,9 @@ var top_limit    = -INF
 
 
 func _ready():
-    screen_size = self.get_viewport_rect().size
+	screen_size = self.get_viewport_rect().size
+	self.set_meta("type", "player")
+	
 
 func update_viewport():
     var canvas_transform = self.get_viewport().get_canvas_transform()
@@ -27,10 +29,19 @@ func update_viewport():
 
 
 func _physics_process(delta):
-	var mouse_pos = $Cam.get_global_mouse_position()
+	
+	var movement = self.doMovement()
+	
+	var collision = move_and_collide(movement * speed)
+	
+	doMouseLook()
+	
+	self.update_camera(self.get_position())
 
-	look_at(mouse_pos)
+func applyDamage(amount):
+	print("outch! On a scale from one to ten this is a solid " + str(amount))
 
+func doMovement():
 	x = 0
 	y = 0
 
@@ -52,11 +63,13 @@ func _physics_process(delta):
 		$Lowerbody.play("still")
 	else:
 		$Lowerbody.play("walking")
+		
+	return movement
 
-	move_and_collide(movement * speed)
-	
-	self.update_camera(self.get_position())
+func doMouseLook():
+	var mouse_pos = $Cam.get_global_mouse_position()
 
+	look_at(mouse_pos)
 
 func update_camera(character_pos):
 	var new_camera_pos = self.get_global_position()

@@ -26,21 +26,23 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 10.0
+radius = 20.782
+height = 9.56995
 
 [node name="Player" type="KinematicBody2D" index="0"]
 
-editor/display_folded = true
-position = Vector2( 460, 1080 )
+position = Vector2( 457.217, 1081.62 )
 rotation = -0.862941
+z_index = 1
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -65,7 +67,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
+position = Vector2( -9.271, -6.68919 )
 shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Beard" type="Sprite" parent="." index="3"]
 
