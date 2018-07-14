@@ -5,11 +5,11 @@
 [ext_resource path="res://sprites/cat/frame_2.png" type="Texture" id=3]
 [ext_resource path="res://sprites/cat/frame_3.png" type="Texture" id=4]
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 14.2078
-height = 20.0
+radius = 32.9164
+height = 52.9651
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -38,8 +38,8 @@ __meta__ = {
 
 position = Vector2( -4.64825, 24.4401 )
 rotation = 1.56623
-shape = SubResource( 3 )
-_sections_unfolded = [ "Transform" ]
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Movement" type="AnimatedSprite" parent="." index="1"]
 
@@ -48,6 +48,7 @@ rotation = 1.5789
 scale = Vector2( 0.325677, 0.291404 )
 frames = SubResource( 2 )
 animation = "default"
+frame = 1
 playing = true
 
 
