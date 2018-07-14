@@ -51,6 +51,9 @@ func fire():
 		smash.play()
 
 		point = result.position
+		
+		if result.collider.name == "Enemy_Cat":
+			result.collider.queue_free()
 
 	var distance   = point.distance_to(self.get_global_position())
 	var dist_scale = distance / (self.get_texture().get_size().y + 10)
