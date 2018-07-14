@@ -1,13 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene format=2]
 
-[ext_resource path="res://sprites/blood.png" type="Texture" id=1]
+[node name="blood" type="Sprite"]
 
-[node name="blood" type="Sprite" index="0"]
-
-position = Vector2( 147.981, 181.936 )
-scale = Vector2( 0.619166, 0.636219 )
+position = Vector2( 7.62939e-006, 0 )
 z_index = -1
-texture = ExtResource( 1 )
-_sections_unfolded = [ "Z Index" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 
