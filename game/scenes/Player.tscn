@@ -33,7 +33,7 @@ custom_solver_bias = 0.0
 radius = 20.782
 height = 9.56995
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 position = Vector2( 460, 1080 )
 rotation = -0.862941
@@ -61,7 +61,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Upperbody" type="Sprite" parent="." index="1"]
 
-position = Vector2( -1.67023, -3.05176e-005 )
+position = Vector2( -1.67023, -3.05176e-05 )
 rotation = -1.5708
 scale = Vector2( 0.5, 0.5 )
 z_index = 100
