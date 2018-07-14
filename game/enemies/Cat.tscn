@@ -35,7 +35,9 @@ _sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibi
 
 position = Vector2( 1.99266, 11.0013 )
 rotation = 1.56623
+z_index = -1
 shape = SubResource( 1 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="Movement" type="AnimatedSprite" parent="." index="1"]
 

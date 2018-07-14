@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/characterMovement.gd" type="Script" id=1]
-[ext_resource path="res://sprites/leftleg.png" type="Texture" id=2]
-[ext_resource path="res://sprites/rightleg.png" type="Texture" id=3]
-[ext_resource path="res://sprites/standing.png" type="Texture" id=4]
+[ext_resource path="res://sprites/standing.png" type="Texture" id=2]
+[ext_resource path="res://sprites/leftleg.png" type="Texture" id=3]
+[ext_resource path="res://sprites/rightleg.png" type="Texture" id=4]
 [ext_resource path="res://sprites/upperbody.png" type="Texture" id=5]
 [ext_resource path="res://sprites/beard.png" type="Texture" id=6]
 [ext_resource path="res://scripts/Beard.gd" type="Script" id=7]
@@ -15,15 +15,15 @@
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "walking",
-"speed": 3.0
-}, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "still",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "walking",
+"speed": 3.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
@@ -33,14 +33,15 @@ radius = 10.0
 
 [node name="Player" type="KinematicBody2D" index="0"]
 
-editor/display_folded = true
 position = Vector2( 460, 1080 )
 rotation = -0.862941
+z_index = 100
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -49,6 +50,7 @@ __meta__ = {
 
 rotation = -1.5708
 scale = Vector2( 0.5, 0.5 )
+z_index = -10
 frames = SubResource( 1 )
 animation = "walking"
 frame = 1
@@ -57,11 +59,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Upperbody" type="Sprite" parent="." index="1"]
 
-position = Vector2( -1.67023, -3.05176e-005 )
+position = Vector2( -1.67023, -3.05176e-05 )
 rotation = -1.5708
 scale = Vector2( 0.5, 0.5 )
+z_index = 100
+z_as_relative = false
 texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 
@@ -72,11 +76,12 @@ shape = SubResource( 2 )
 position = Vector2( 39.3419, 103.27 )
 rotation = -1.5708
 scale = Vector2( 0.407535, 0.376114 )
+z_index = 100
 texture = ExtResource( 6 )
 centered = false
 region_rect = Rect2( 0, 0, 60, 60 )
 script = ExtResource( 7 )
-_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
+_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="GunTween" type="Tween" parent="Beard" index="0"]
 

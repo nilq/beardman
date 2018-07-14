@@ -3,6 +3,10 @@ extends Sprite
 onready var BEARD_POS   = self.get_position()
 onready var BEARD_SCALE = Vector2(self.get_scale().x, self.get_scale().y / 1.25)
 
+
+onready var blood = preload( "res://scenes/blood.tscn" ).instance()
+
+
 var is_bearding = false
 var beard_time  = 0.075
 
@@ -60,7 +64,13 @@ func fire():
 
 			meow.play()
 			splash.play()
-
+			
+			var new_blood = blood.duplicate()
+			
+			new_blood.set_rotation(rand_range(-360, 360))
+			new_blood.set_position(result.position)
+			
+			self.get_node("../../").add_child(new_blood)
 
 			result.collider.queue_free()
 

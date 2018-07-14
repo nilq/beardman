@@ -40,11 +40,16 @@ radius = 10.0
 
 [node name="World" type="Node2D" index="0"]
 
+z_index = -100
+_sections_unfolded = [ "Z Index" ]
+
 [node name="Room" type="Sprite" parent="." index="0"]
 
 editor/display_folded = true
 position = Vector2( 719.057, 424.954 )
+z_index = -100
 texture = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Room" index="0"]
 
@@ -122,6 +127,7 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 2 )
+_sections_unfolded = [ "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -130,8 +136,11 @@ __meta__ = {
 
 rotation = -1.5708
 scale = Vector2( 0.5, 0.5 )
+z_index = -10
+z_as_relative = false
 frames = SubResource( 2 )
 animation = "walking"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -140,8 +149,10 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( -1.67023, -3.05176e-05 )
 rotation = -1.5708
 scale = Vector2( 0.5, 0.5 )
+z_index = 100
+z_as_relative = false
 texture = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="2"]
 
@@ -152,11 +163,13 @@ shape = SubResource( 3 )
 position = Vector2( 39.3419, 103.27 )
 rotation = -1.5708
 scale = Vector2( 0.407535, 0.376114 )
+z_index = 100
+z_as_relative = false
 texture = ExtResource( 7 )
 centered = false
 region_rect = Rect2( 0, 0, 60, 60 )
 script = ExtResource( 8 )
-_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]
+_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="GunTween" type="Tween" parent="Player/Beard" index="0"]
 
@@ -179,6 +192,7 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+_sections_unfolded = [ "Z Index" ]
 
 [node name="PunchSound" type="AudioStreamPlayer2D" parent="Player/Beard" index="2"]
 
