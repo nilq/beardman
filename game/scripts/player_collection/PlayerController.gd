@@ -7,15 +7,12 @@ var dy = 0
 
 var friction = 10
 
-var drag_margin_left = 0.3
-var drag_margin_right = 0.7
+
 
 var screen_size
 
-var right_limit  = INF
-var left_limit   = -INF
-var bottom_limit = INF
-var top_limit    = -INF
+var camera_speed = 2
+
 onready var sanity = $Sanity
 
 var door
@@ -46,7 +43,7 @@ func _physics_process(delta):
 			
 			if door != collision.collider:
 				self.set_rotation(door.get_rotation() - 90)
-				self.set_position(door.get_position() - Vector2(cos(door.get_rotation() - 90), -1) * 0)
+				self.set_global_position(door.get_global_position())
 		else:
 			if door:
 				door.can_trigger = true
@@ -56,7 +53,7 @@ func _physics_process(delta):
 		
 	do_mouse_look()
 
-	self.update_camera(self.get_position())
+	self.update_camera(self.get_position(), delta)
 
 func apply_damage(amount):
 	sanity.sanity_set(sanity.sanity_get() - amount)
@@ -100,19 +97,10 @@ func do_mouse_look():
 
 	look_at(mouse_pos)
 
-func update_camera(character_pos):
+func update_camera(character_pos, delta):
 	var new_camera_pos = self.get_global_position()
 
-	if character_pos.x > self.get_global_position().x + screen_size.x * (drag_margin_right - 0.5):
-		new_camera_pos.x = character_pos.x - screen_size.x * (drag_margin_right - 0.5)
-    
-	elif character_pos.x < self.get_global_position().x + screen_size.x * (drag_margin_left - 0.5):
-		new_camera_pos.x = character_pos.x + screen_size.x * (0.5 - drag_margin_left)
-		
-	
-	var room_sprite = self.get_node("../Room")
-
-	new_camera_pos.x = clamp(new_camera_pos.x, left_limit + screen_size.x * 0.5, right_limit - screen_size.x * 0.5)
-	new_camera_pos.y = clamp(new_camera_pos.y, top_limit + screen_size.y * 0.5, bottom_limit - screen_size.y * 0.5)
+	new_camera_pos.x = lerp(new_camera_pos.x, character_pos.x - screen_size.x / 2, delta * camera_speed)
+	new_camera_pos.y = lerp(new_camera_pos.y, character_pos.y - screen_size.y / 2, delta * camera_speed)
 
 	$Cam.set_global_position(new_camera_pos)

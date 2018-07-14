@@ -11,7 +11,7 @@ func _ready():
 	
 	while door_friend == self:
 		door_friend  = children[rand_range(0, children.size())]
-
+		
 func get_door():
 	if self.can_trigger:
 		door_friend.can_trigger = false
