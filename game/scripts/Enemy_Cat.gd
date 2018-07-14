@@ -30,10 +30,11 @@ func _ready():
 	timer.start()
 	
 	attack_timer = Timer.new()
+
 	attack_timer.set_wait_time(attack_interval)
-	attack_timer.autostart = false
-	attack_timer.one_shot = true
-	attack_timer.process_mode = Timer.TIMER_PROCESS_IDLE
+	attack_timer.connect("timeout", self, "try_attack")
+	attack_timer.start()
+	
 	add_child(attack_timer)
 	
 
@@ -64,18 +65,24 @@ func _process(delta):
 			if not "Player" in result.collider.name and not "Enemy_Cat" in result.collider.name:
 				angle = lerp(angle, angle + random_angle_multiplier, delta * 5)
 
-		var collision = self.move_and_collide(Vector2(cos(angle), sin(angle)) * speed)
-		try_attack(collision)
-		
-func try_attack(collision):
-	if attack_timer.is_stopped() \
-	&& collision != null \
-	&& collision.collider.has_meta("type") \
-	&& collision.collider.get_meta("type") != "enemy":
+		self.move_and_collide(Vector2(cos(angle), sin(angle)) * speed)
+
+
+func try_attack():
+	if self.position.distance_to(player.get_position()) < 150:
 		self.set_z_index(1000)
+
 		$Animation.play("attack")
+		
+		var sound = $Slash
+
+		sound.set_pitch_scale(0.75)
+		sound.play()
+		
 		$Animation.connect("animation_finished", self, "resume_movement")
-		collision.collider.apply_damage(damage)
+
+		player.apply_damage(damage)
+		
 		attack_timer.start()
 		
 func resume_movement():
