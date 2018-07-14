@@ -12,7 +12,7 @@ func _ready():
 func start_timer():
 	var timer = Timer.new()
 
-	timer.set_wait_time(2.5)
+	timer.set_wait_time(1.5)
 	timer.connect("timeout", self, "spawn_cat", [timer])
 	
 	self.add_child(timer)

@@ -8,7 +8,7 @@
 [sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 35.8872
+radius = 60.2854
 height = 44.4088
 
 [sub_resource type="SpriteFrames" id=2]
