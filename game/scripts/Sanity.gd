@@ -19,7 +19,7 @@ func sanity_set(sanityLevel):
 	_sanityLevel = sanityLevel
 	
 	if _sanityLevel < 0:
-		print ("TODO: game over scene at line 22 in Sanity.gd")
+		get_tree().change_scene("res://scenes/Dead.tscn")
 		
 	if _sanityLevel > 100:
 		_sanityLevel = 100
