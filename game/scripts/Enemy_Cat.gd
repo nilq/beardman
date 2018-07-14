@@ -7,7 +7,7 @@ var damage = 10
 onready var direction 	 	 = self.get_target_direction()
 onready var smooth_direction = direction
 
-var speed 		 = 7
+var speed 		 = 10
 var attack_range = 100
 var angle  		 = 0
 
