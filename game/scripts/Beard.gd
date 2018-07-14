@@ -72,7 +72,6 @@ func fire():
 	
 				meow.play()
 				splash.play()
-				print("a")
 				statHud.increment_score(10)
 				var new_blood = blood.duplicate()
 	
@@ -85,16 +84,16 @@ func fire():
 				result.collider.queue_free()
 				
 			if "Enemy_Barber" in result.collider.name:
-				var meow   = $Meow.duplicate()
+				var ugh   = $Ugh.duplicate()
 				var splash = $Splash.duplicate()
 	
-				meow.set_pitch_scale(rand_range(0.95, 1.25))
+				ugh.set_pitch_scale(rand_range(0.95, 1.25))
 				splash.set_pitch_scale(rand_range(0.95, 1.25))
-	
-				add_child(meow)
+				statHud.increment_score(25)
+				add_child(ugh)
 				add_child(splash)
 	
-				meow.play()
+				ugh.play()
 				splash.play()
 	
 				var new_blood = blood.duplicate()
