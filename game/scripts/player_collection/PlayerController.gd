@@ -18,16 +18,19 @@ var bottom_limit = INF
 var top_limit    = -INF
 onready var sanity = $Sanity
 
+var door
+
+
 func _ready():
 	screen_size = self.get_viewport_rect().size
 	self.set_meta("type", "player")
-	
+
 
 func update_viewport():
-    var canvas_transform = self.get_viewport().get_canvas_transform()
-    canvas_transform.o   = -self.get_global_position() + screen_size / 2.0
+	var canvas_transform = self.get_viewport().get_canvas_transform()
+	canvas_transform.o   = -self.get_global_position() + screen_size / 2.0
 
-    self.get_viewport().set_canvas_transform(canvas_transform)
+	self.get_viewport().set_canvas_transform(canvas_transform)
 
 
 func _physics_process(delta):
@@ -38,6 +41,20 @@ func _physics_process(delta):
 
 	var collision = move_and_collide(movement)
 	
+	if collision:
+		if "Door" in collision.collider.name:
+			door = collision.collider.get_door()
+			
+			if door != collision.collider:
+				self.set_rotation(door.get_rotation() - 90)
+				self.set_position(door.get_position() - Vector2(cos(door.get_rotation() - 90), -1) * 0)
+		else:
+			if door:
+				door.can_trigger = true
+	else:
+		if door:
+			door.can_trigger = true
+		
 	do_mouse_look()
 
 	self.update_camera(self.get_position())
