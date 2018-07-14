@@ -14,6 +14,10 @@ config/name="To Beard or Not to Beard"
 run/main_scene="res://scenes/Title.tscn"
 config/icon="res://sprites/upperbody.png"
 
+[autoload]
+
+Globals="*res://scripts/Globals.gd"
+
 [display]
 
 window/size/width=1920

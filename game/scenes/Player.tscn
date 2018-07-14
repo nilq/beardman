@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/player_collection/PlayerController.gd" type="Script" id=1]
 [ext_resource path="res://sprites/leftleg.png" type="Texture" id=2]
@@ -10,9 +10,10 @@
 [ext_resource path="res://sound/whip.wav" type="AudioStream" id=8]
 [ext_resource path="res://sound/punch.wav" type="AudioStream" id=9]
 [ext_resource path="res://sound/meow.wav" type="AudioStream" id=10]
-[ext_resource path="res://sound/splash.wav" type="AudioStream" id=11]
-[ext_resource path="res://scenes/Sanity.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/TimePlayed.tscn" type="PackedScene" id=13]
+[ext_resource path="res://sound/barberdead.wav" type="AudioStream" id=11]
+[ext_resource path="res://sound/splash.wav" type="AudioStream" id=12]
+[ext_resource path="res://scenes/Sanity.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/TimePlayed.tscn" type="PackedScene" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -34,7 +35,7 @@ custom_solver_bias = 0.0
 radius = 20.782
 height = 9.56995
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 position = Vector2( 1066.48, 592.146 )
 rotation = -0.862941
@@ -74,7 +75,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Beard" type="Sprite" parent="." index="3"]
 
-editor/display_folded = true
 position = Vector2( 39.3419, 103.27 )
 rotation = -1.5708
 scale = Vector2( 0.407535, 0.376114 )
@@ -138,9 +138,18 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="Splash" type="AudioStreamPlayer" parent="Beard" index="5"]
+[node name="Ugh" type="AudioStreamPlayer" parent="Beard" index="5"]
 
 stream = ExtResource( 11 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Splash" type="AudioStreamPlayer" parent="Beard" index="6"]
+
+stream = ExtResource( 12 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -173,8 +182,8 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Material", "Offset", "Transform" ]
 
-[node name="Sanity" parent="." index="5" instance=ExtResource( 12 )]
+[node name="Sanity" parent="." index="5" instance=ExtResource( 13 )]
 
-[node name="StatHud" parent="." index="6" instance=ExtResource( 13 )]
+[node name="StatHud" parent="." index="6" instance=ExtResource( 14 )]
 
 
