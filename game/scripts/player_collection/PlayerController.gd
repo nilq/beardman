@@ -7,8 +7,8 @@ var dy = 0
 
 var friction = 10
 
-var drag_margin_left = 0.3
-var drag_margin_right = 0.7
+var drag_margin_left = -0.7
+var drag_margin_right = -0.7
 
 var screen_size
 
@@ -46,7 +46,7 @@ func _physics_process(delta):
 			
 			if door != collision.collider:
 				self.set_rotation(door.get_rotation() - 90)
-				self.set_position(door.get_position() - Vector2(cos(door.get_rotation() - 90), -1) * 0)
+				self.set_global_position(door.get_global_position())
 		else:
 			if door:
 				door.can_trigger = true
@@ -100,9 +100,6 @@ func update_camera(character_pos):
     
 	elif character_pos.x < self.get_global_position().x + screen_size.x * (drag_margin_left - 0.5):
 		new_camera_pos.x = character_pos.x + screen_size.x * (0.5 - drag_margin_left)
-		
-	
-	var room_sprite = self.get_node("../Room")
 
 	new_camera_pos.x = clamp(new_camera_pos.x, left_limit + screen_size.x * 0.5, right_limit - screen_size.x * 0.5)
 	new_camera_pos.y = clamp(new_camera_pos.y, top_limit + screen_size.y * 0.5, bottom_limit - screen_size.y * 0.5)

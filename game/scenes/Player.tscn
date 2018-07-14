@@ -33,9 +33,9 @@ custom_solver_bias = 0.0
 radius = 20.782
 height = 9.56995
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
-position = Vector2( 460, 1080 )
+position = Vector2( 981.582, 546.585 )
 rotation = -0.862941
 z_index = 100
 input_pickable = false
@@ -55,7 +55,6 @@ scale = Vector2( 0.5, 0.5 )
 z_index = -10
 frames = SubResource( 1 )
 animation = "walking"
-frame = 1
 playing = true
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -152,7 +151,6 @@ bus = "Master"
 
 [node name="Cam" type="Camera2D" parent="." index="4"]
 
-position = Vector2( 77.7513, 13.9592 )
 anchor_mode = 1
 rotating = false
 current = true
@@ -175,7 +173,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-_sections_unfolded = [ "Material" ]
+_sections_unfolded = [ "Material", "Offset", "Transform" ]
 
 [node name="Sanity" parent="." index="5" instance=ExtResource( 12 )]
 
