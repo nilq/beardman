@@ -58,6 +58,9 @@ func fire():
 		if "Enemy_Cat" in result.collider.name:
 			var meow   = $Meow.duplicate()
 			var splash = $Splash.duplicate()
+			
+			meow.set_pitch_scale(rand_range(0.95, 1.25))
+			splash.set_pitch_scale(rand_range(0.95, 1.25))
 
 			add_child(meow)
 			add_child(splash)
