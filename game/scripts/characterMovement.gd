@@ -5,9 +5,27 @@ var speed = 5
 var x = 0
 var y = 0
 
+var drag_margin_left = 0.3
+var drag_margin_right = 0.7
+
+var right_limit = 1000000
+var left_limit = -1000000
+
+var screen_size
+
+
+func _ready():
+    screen_size = self.get_viewport_rect().size
+
+func update_viewport():
+    var canvas_transform = self.get_viewport().get_canvas_transform()
+    canvas_transform.o   = -self.get_global_position() + screen_size / 2.0
+
+    self.get_viewport().set_canvas_transform(canvas_transform)
+
 
 func _physics_process(delta):
-	var mouse_pos = get_viewport().get_mouse_position()
+	var mouse_pos = $Cam.get_global_mouse_position()
 
 	look_at(mouse_pos)
 
@@ -34,3 +52,29 @@ func _physics_process(delta):
 		$Lowerbody.play("walking")
 
 	move_and_collide(movement * speed)
+	
+	self.update_camera(self.get_position())
+
+
+func update_camera(character_pos):
+	var new_camera_pos = self.get_global_position()
+
+	if character_pos.x > self.get_global_position().x + screen_size.x * (drag_margin_right - 0.5):
+		new_camera_pos.x = character_pos.x - screen_size.x * (drag_margin_right - 0.5)
+    
+	elif character_pos.x < self.get_global_position().x + screen_size.x * (drag_margin_left - 0.5):
+		new_camera_pos.x = character_pos.x + screen_size.x * (0.5 - drag_margin_left)
+		
+	
+	var room_sprite = self.get_node("../Room")
+	
+	var top_limit    = 0
+	var bottom_limit = room_sprite.get_texture().get_height()
+	var left_limit   = 0
+	var right_limit  = room_sprite.get_texture().get_width()
+	
+
+	new_camera_pos.x = clamp(new_camera_pos.x, left_limit + screen_size.x * 0.5, right_limit - screen_size.x * 0.5)
+	new_camera_pos.y = clamp(new_camera_pos.y, top_limit + screen_size.y * 0.5, bottom_limit - screen_size.y * 0.5)
+
+	$Cam.set_global_position(new_camera_pos)

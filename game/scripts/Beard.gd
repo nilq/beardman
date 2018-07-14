@@ -14,10 +14,10 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == BUTTON_LEFT and !is_bearding:
-			self.fire(event.position)
+			self.fire()
 
 
-func fire(mouse_pos):
+func fire():
 	var fade = $FadeTween
 	
 	fade.interpolate_property(self, "modulate", 
@@ -36,11 +36,13 @@ func fire(mouse_pos):
 	var beard_scale = BEARD_SCALE
 	var beard_pos   = self.get_position()
 	
+	var mouse_pos = self.get_node("../Cam").get_global_mouse_position()
+	
 	# Calculate beard collisions
 	var space_state = get_world_2d().direct_space_state
-	var result 		= space_state.intersect_ray(self.get_global_position(), get_viewport().get_mouse_position())
+	var result 		= space_state.intersect_ray(self.get_global_position(), mouse_pos)
 
-	var point  	   = get_viewport().get_mouse_position()
+	var point  	   = mouse_pos
 	
 	if result:
 		var smash = $PunchSound
