@@ -6,6 +6,9 @@ onready var BEARD_SCALE = Vector2(self.get_scale().x, self.get_scale().y / 1.25)
 
 onready var blood = preload( "res://scenes/blood.tscn" ).instance()
 
+onready var player = self.get_node("..")
+
+var healingfactor = -10
 
 var is_bearding = false
 var beard_time  = 0.075
@@ -75,6 +78,7 @@ func fire():
 			var blood_file = "blood_" + str(ceil(rand_range(0.1, 2.9)))
 			new_blood.set_texture(load("res://sprites/cat/" + blood_file + ".png"))
 			self.get_node("../..").add_child(new_blood)
+			player.apply_damage(healingfactor)
 			result.collider.queue_free()
 
 	var distance   = point.distance_to(self.get_global_position())
