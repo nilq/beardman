@@ -12,6 +12,7 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Doors" type="Node2D" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( 1167, 655 )
 
 [node name="Door2" parent="Doors" index="0" instance=ExtResource( 1 )]
