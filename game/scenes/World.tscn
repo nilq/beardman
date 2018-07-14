@@ -10,7 +10,7 @@
 [ext_resource path="res://scripts/Beard.gd" type="Script" id=8]
 [ext_resource path="res://sound/whip.wav" type="AudioStream" id=9]
 [ext_resource path="res://sound/punch.wav" type="AudioStream" id=10]
-[ext_resource path="res://scenes/Enemy_Cat.gd" type="Script" id=11]
+[ext_resource path="res://scripts/Enemy_Cat.gd" type="Script" id=11]
 [ext_resource path="res://sprites/cat/frame_1.png" type="Texture" id=12]
 [ext_resource path="res://sprites/cat/frame_2.png" type="Texture" id=13]
 [ext_resource path="res://sprites/cat/frame_3.png" type="Texture" id=14]
@@ -267,7 +267,7 @@ rotation = 1.5789
 scale = Vector2( 0.325677, 0.291404 )
 frames = SubResource( 5 )
 animation = "default"
-frame = 1
+frame = 2
 playing = true
 
 
