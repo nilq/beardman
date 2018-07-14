@@ -22,8 +22,8 @@ func start_timer():
 	timer.start()
 
 func spawn_cat(timer):
-	if self.get_global_position().distance_to(player.get_global_position()) < 2600:
-		for i in range(1, 5):
+	if self.get_global_position().distance_to(player.get_global_position()) < 1600:
+		for i in range(1, 4):
 			var cat = enemy_cat.duplicate()
 			cat.set_position(self.get_position() + Vector2(rand_range(-cat_range, cat_range), rand_range(-cat_range, cat_range)))
 			

@@ -7,7 +7,7 @@ onready var BEARD_SCALE = Vector2(self.get_scale().x, self.get_scale().y / 1.25)
 onready var blood = preload( "res://scenes/blood.tscn" ).instance()
 
 onready var player = self.get_node("..")
-
+onready var statHud = player.get_node("StatHud")
 var healingfactor = -3
 
 var is_bearding = false
@@ -66,13 +66,14 @@ func fire():
 	
 				meow.set_pitch_scale(rand_range(0.95, 1.25))
 				splash.set_pitch_scale(rand_range(0.95, 1.25))
-	
+				
 				add_child(meow)
 				add_child(splash)
 	
 				meow.play()
 				splash.play()
-	
+				print("a")
+				statHud.increment_score(10)
 				var new_blood = blood.duplicate()
 	
 				new_blood.set_rotation(rand_range(-360, 360))
