@@ -53,6 +53,16 @@ func fire():
 		point = result.position
 		
 		if result.collider.name == "Enemy_Cat":
+			var meow   = $Meow.duplicate()
+			var splash = $Splash.duplicate()
+
+			add_child(meow)
+			add_child(splash)
+
+			meow.play()
+			splash.play()
+
+
 			result.collider.queue_free()
 
 	var distance   = point.distance_to(self.get_global_position())
