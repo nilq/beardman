@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/rooms/roooooms.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sound/Lumme/Down The Halls.wav" type="AudioStream" id=3]
 
-[node name="World" type="Node2D" index="0"]
+[node name="World" type="Node2D"]
 
 position = Vector2( 2170.79, 1029.83 )
 z_index = -100
@@ -12,6 +12,7 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Doors" type="Node2D" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( 1167, 655 )
 
 [node name="Door2" parent="Doors" index="0" instance=ExtResource( 1 )]

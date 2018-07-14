@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/player_collection/PlayerController.gd" type="Script" id=1]
-[ext_resource path="res://sprites/standing.png" type="Texture" id=2]
-[ext_resource path="res://sprites/leftleg.png" type="Texture" id=3]
-[ext_resource path="res://sprites/rightleg.png" type="Texture" id=4]
+[ext_resource path="res://sprites/leftleg.png" type="Texture" id=2]
+[ext_resource path="res://sprites/rightleg.png" type="Texture" id=3]
+[ext_resource path="res://sprites/standing.png" type="Texture" id=4]
 [ext_resource path="res://sprites/upperbody.png" type="Texture" id=5]
 [ext_resource path="res://sprites/beard.png" type="Texture" id=6]
 [ext_resource path="res://scripts/Beard.gd" type="Script" id=7]
@@ -12,19 +12,20 @@
 [ext_resource path="res://sound/meow.wav" type="AudioStream" id=10]
 [ext_resource path="res://sound/splash.wav" type="AudioStream" id=11]
 [ext_resource path="res://scenes/Sanity.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/TimePlayed.tscn" type="PackedScene" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "still",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walking",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "still",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -35,7 +36,7 @@ height = 9.56995
 
 [node name="Player" type="KinematicBody2D"]
 
-position = Vector2( 981.582, 546.585 )
+position = Vector2( 1066.48, 592.146 )
 rotation = -0.862941
 z_index = 3
 input_pickable = false
@@ -44,9 +45,6 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Lowerbody" type="AnimatedSprite" parent="." index="0"]
 
@@ -55,6 +53,7 @@ scale = Vector2( 0.5, 0.5 )
 z_index = 1
 frames = SubResource( 1 )
 animation = "walking"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -175,5 +174,7 @@ editor_draw_drag_margin = false
 _sections_unfolded = [ "Material", "Offset", "Transform" ]
 
 [node name="Sanity" parent="." index="5" instance=ExtResource( 12 )]
+
+[node name="StatHud" parent="." index="6" instance=ExtResource( 13 )]
 
 
