@@ -82,6 +82,29 @@ func fire():
 				self.get_node("../..").add_child(new_blood)
 				player.apply_damage(healingfactor)
 				result.collider.queue_free()
+				
+			if "Enemy_Barber" in result.collider.name:
+				var meow   = $Meow.duplicate()
+				var splash = $Splash.duplicate()
+	
+				meow.set_pitch_scale(rand_range(0.95, 1.25))
+				splash.set_pitch_scale(rand_range(0.95, 1.25))
+	
+				add_child(meow)
+				add_child(splash)
+	
+				meow.play()
+				splash.play()
+	
+				var new_blood = blood.duplicate()
+	
+				new_blood.set_rotation(rand_range(-360, 360))
+				new_blood.set_position(result.position)
+				var blood_file = "blood_" + str(ceil(rand_range(0.1, 2.9)))
+				new_blood.set_texture(load("res://sprites/cat/" + blood_file + ".png"))
+				self.get_node("../..").add_child(new_blood)
+				player.apply_damage(healingfactor)
+				result.collider.queue_free()
 	
 		var distance   = point.distance_to(self.get_global_position())
 		var dist_scale = distance / (self.get_texture().get_size().y + 10)
