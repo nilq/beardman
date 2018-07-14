@@ -1,0 +1,763 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/CatSpawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/rooms/room_start.png" type="Texture" id=3]
+[ext_resource path="res://sprites/rooms/room_ballroom.png" type="Texture" id=4]
+[ext_resource path="res://sprites/rooms/room_kitchen.png" type="Texture" id=5]
+[ext_resource path="res://sprites/rooms/room_small.png" type="Texture" id=6]
+[ext_resource path="res://sprites/rooms/room_study.png" type="Texture" id=7]
+[ext_resource path="res://sprites/rooms/room_hallway.png" type="Texture" id=8]
+[ext_resource path="res://sprites/rooms/room_hallway2.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 1074.94 )
+
+[node name="Rooms" type="Node"]
+
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 911.656, 362.691 )
+rotation = 2.05694
+
+[node name="CatSpawner" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 3728.49, 717.593 )
+
+[node name="CatSpawner2" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 4425.22, 797.013 )
+
+[node name="CatSpawner3" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 4118.37, 1327.68 )
+
+[node name="CatSpawner4" parent="." index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 3544.38, 1161.62 )
+
+[node name="CatSpawner5" parent="." index="5" instance=ExtResource( 2 )]
+
+position = Vector2( 633.593, 3447.53 )
+
+[node name="CatSpawner6" parent="." index="6" instance=ExtResource( 2 )]
+
+position = Vector2( 337.114, 3147.79 )
+
+[node name="CatSpawner7" parent="." index="7" instance=ExtResource( 2 )]
+
+position = Vector2( 3590.54, 3414.95 )
+
+[node name="CatSpawner8" parent="." index="8" instance=ExtResource( 2 )]
+
+position = Vector2( 6836.09, 5148.72 )
+
+[node name="CatSpawner9" parent="." index="9" instance=ExtResource( 2 )]
+
+position = Vector2( 7304.06, 5344.62 )
+
+[node name="CatSpawner10" parent="." index="10" instance=ExtResource( 2 )]
+
+position = Vector2( 8807.93, 1941.05 )
+
+[node name="CatSpawner11" parent="." index="11" instance=ExtResource( 2 )]
+
+position = Vector2( 11700, 4810.16 )
+
+[node name="CatSpawner12" parent="." index="12" instance=ExtResource( 2 )]
+
+position = Vector2( 11653.2, 4015.16 )
+
+[node name="StartRoom" type="Sprite" parent="." index="13"]
+
+editor/display_folded = true
+position = Vector2( 658.479, 594.225 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="StartRoom" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartRoom/StaticBody2D" index="0"]
+
+position = Vector2( -440, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="StartRoom" index="1"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartRoom/StaticBody2D2" index="0"]
+
+position = Vector2( 422.664, 74.5439 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="StartRoom" index="2"]
+
+editor/display_folded = true
+rotation = 1.5708
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartRoom/StaticBody2D3" index="0"]
+
+position = Vector2( 435.048, -32 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="StartRoom" index="3"]
+
+editor/display_folded = true
+rotation = 1.5708
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartRoom/StaticBody2D5" index="0"]
+
+position = Vector2( -402.175, -149.987 )
+shape = SubResource( 1 )
+
+[node name="RoomBall" type="Sprite" parent="." index="14"]
+
+editor/display_folded = true
+position = Vector2( 3756.23, 1119.7 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomBall" index="0"]
+
+editor/display_folded = true
+position = Vector2( -3756.23, -1119.7 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomBall/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 4335.78, 279.494, 4613.29, 361.116, 4792.86, 453.622, 4939.78, 605.983, 5015.96, 807.318, 5037.73, 1008.65, 5054.05, 1280.73, 5032.29, 1416.76, 4950.66, 1607.22, 4841.83, 1781.34, 4711.24, 1901.06, 4575.2, 1939.15, 4335.78, 1971.79, 4411.96, 2091.51, 4765.65, 2004.44, 5108.47, 1612.66, 5184.65, 1046.74, 5064.94, 551.568, 4711.24, 246.845, 4352.1, 165.223 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="RoomBall" index="1"]
+
+editor/display_folded = true
+position = Vector2( -892.07, -23.7358 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomBall/StaticBody2D4" index="0"]
+
+position = Vector2( -440, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="RoomBall" index="2"]
+
+editor/display_folded = true
+position = Vector2( -298.949, -382.873 )
+rotation = 1.56865
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomBall/StaticBody2D5" index="0"]
+
+position = Vector2( -440, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="RoomBall" index="3"]
+
+editor/display_folded = true
+position = Vector2( -445.869, 427.907 )
+rotation = 4.69789
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomBall/StaticBody2D6" index="0"]
+
+position = Vector2( -440, 70 )
+shape = SubResource( 1 )
+
+[node name="RoomKitchen" type="Sprite" parent="." index="15"]
+
+editor/display_folded = true
+position = Vector2( 747.647, 2790.72 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="RoomKitchen" index="0"]
+
+editor/display_folded = true
+position = Vector2( -113.286, -44.0234 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomKitchen/StaticBody2D6" index="0"]
+
+position = Vector2( -440, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="RoomKitchen" index="1"]
+
+editor/display_folded = true
+position = Vector2( 314.713, -36.0234 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomKitchen/StaticBody2D4" index="0"]
+
+position = Vector2( 422.664, 74.5439 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="RoomKitchen" index="2"]
+
+editor/display_folded = true
+position = Vector2( -25.2864, 391.975 )
+rotation = 1.5708
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomKitchen/StaticBody2D7" index="0"]
+
+position = Vector2( 435.048, -32 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="RoomKitchen" index="3"]
+
+editor/display_folded = true
+position = Vector2( -169.286, -384.022 )
+rotation = 1.5708
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomKitchen/StaticBody2D8" index="0"]
+
+position = Vector2( -402.175, -149.987 )
+shape = SubResource( 1 )
+
+[node name="RoomSmall" type="Sprite" parent="." index="16"]
+
+editor/display_folded = true
+position = Vector2( 3273.91, 3537.12 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="RoomSmall" index="0"]
+
+editor/display_folded = true
+position = Vector2( 10.5186, -40.7654 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomSmall/StaticBody2D6" index="0"]
+
+position = Vector2( -440, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="RoomSmall" index="1"]
+
+editor/display_folded = true
+position = Vector2( 5.20142, -62.0874 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomSmall/StaticBody2D4" index="0"]
+
+position = Vector2( 422.664, 74.5439 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="RoomSmall" index="2"]
+
+editor/display_folded = true
+position = Vector2( 10.5518, 398.491 )
+rotation = 1.5708
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomSmall/StaticBody2D7" index="0"]
+
+position = Vector2( 435.048, -32 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="RoomSmall" index="3"]
+
+editor/display_folded = true
+position = Vector2( -192.092, -426.376 )
+rotation = 1.5708
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomSmall/StaticBody2D8" index="0"]
+
+position = Vector2( -402.175, -149.987 )
+shape = SubResource( 1 )
+
+[node name="RoomStudy" type="Sprite" parent="." index="17"]
+
+editor/display_folded = true
+position = Vector2( 6814.56, 4759.77 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="RoomStudy" index="0"]
+
+editor/display_folded = true
+position = Vector2( -858.571, -281.868 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomStudy/StaticBody2D10" index="0"]
+
+position = Vector2( -440, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="RoomStudy" index="1"]
+
+editor/display_folded = true
+position = Vector2( 780.427, 259.689 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomStudy/StaticBody2D5" index="0"]
+
+position = Vector2( 422.664, 74.5439 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="RoomStudy" index="2"]
+
+editor/display_folded = true
+position = Vector2( -437.487, 613.897 )
+rotation = 1.5708
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomStudy/StaticBody2D11" index="0"]
+
+position = Vector2( 426.181, -723.41 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="RoomStudy" index="3"]
+
+editor/display_folded = true
+position = Vector2( 218.467, -724.603 )
+rotation = 1.5708
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomStudy/StaticBody2D12" index="0"]
+
+position = Vector2( 426.181, -723.41 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="RoomStudy" index="4"]
+
+editor/display_folded = true
+position = Vector2( 426.777, -1633.19 )
+rotation = 3.13107
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomStudy/StaticBody2D13" index="0"]
+
+position = Vector2( 417.912, -710.849 )
+scale = Vector2( 1, 0.677958 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="RoomStudy" index="5"]
+
+editor/display_folded = true
+position = Vector2( -821.847, -676.343 )
+rotation = 1.5708
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomStudy/StaticBody2D9" index="0"]
+
+position = Vector2( -402.175, -149.987 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomStudy" index="6"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomStudy/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -1307.15, 167.218, -1055.57, 347.979, -651.251, 214.41, -449.092, 506.818, -672.911, 647.608, -481.582, 701.758, -293.862, 647.608, -172.727, 687.777, -157.994, 1046.28, -1258.04, 1016.81 )
+
+[node name="RoomHall" type="Sprite" parent="." index="18"]
+
+editor/display_folded = true
+position = Vector2( 9018.28, 1549.55 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="RoomHall" index="0"]
+
+position = Vector2( -1220.44, -271.04 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomHall/StaticBody2D10" index="0"]
+
+position = Vector2( -440, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="RoomHall" index="1"]
+
+position = Vector2( 732.563, 779.467 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomHall/StaticBody2D13" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -1231.16, -483.333, -1180.62, -349.763, -1050.66, -252.294, -862.937, -241.464, -747.417, -288.394, -664.388, -360.593, -664.388, -447.233, -584.968, -302.834, -693.268, -151.214, -1007.34, -60.9644, -1220.33, -208.974, -1296.14, -328.104 )
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="RoomHall" index="2"]
+
+position = Vector2( 1064.68, -112.201 )
+rotation = -1.57092
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomHall/StaticBody2D12" index="0"]
+
+position = Vector2( -440, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="RoomHall" index="3"]
+
+editor/display_folded = true
+position = Vector2( 1259.55, -199.04 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomHall/StaticBody2D5" index="0"]
+
+position = Vector2( 422.664, 74.5439 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="RoomHall" index="4"]
+
+position = Vector2( -1065.38, -96.557 )
+rotation = 1.5708
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomHall/StaticBody2D11" index="0"]
+
+position = Vector2( 398.306, 36.8586 )
+scale = Vector2( 1, 0.568606 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="RoomHall" index="5"]
+
+position = Vector2( -960.442, -163.04 )
+rotation = 1.5708
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomHall/StaticBody2D9" index="0"]
+
+position = Vector2( -409.4, -877.95 )
+scale = Vector2( 1, 1.64752 )
+shape = SubResource( 1 )
+
+[node name="RoomHall2" type="Sprite" parent="." index="19"]
+
+editor/display_folded = true
+position = Vector2( 11908.2, 4439.48 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="RoomHall2" index="0"]
+
+position = Vector2( -1220.44, -271.04 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomHall2/StaticBody2D10" index="0"]
+
+position = Vector2( -440, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="RoomHall2" index="1"]
+
+position = Vector2( 732.563, 779.467 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomHall2/StaticBody2D13" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -1231.16, -483.333, -1180.62, -349.763, -1050.66, -252.294, -862.937, -241.464, -747.417, -288.394, -664.388, -360.593, -664.388, -447.233, -584.968, -302.834, -693.268, -151.214, -1007.34, -60.9644, -1220.33, -208.974, -1296.14, -328.104 )
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="RoomHall2" index="2"]
+
+position = Vector2( 1064.68, -112.201 )
+rotation = -1.57092
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomHall2/StaticBody2D12" index="0"]
+
+position = Vector2( -440, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="RoomHall2" index="3"]
+
+editor/display_folded = true
+position = Vector2( 1259.55, -199.04 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomHall2/StaticBody2D5" index="0"]
+
+position = Vector2( 422.664, 74.5439 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="RoomHall2" index="4"]
+
+position = Vector2( -1065.38, -96.557 )
+rotation = 1.5708
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomHall2/StaticBody2D11" index="0"]
+
+position = Vector2( 398.306, 36.8586 )
+scale = Vector2( 1, 0.568606 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="RoomHall2" index="5"]
+
+position = Vector2( -960.442, -163.04 )
+rotation = 1.5708
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomHall2/StaticBody2D9" index="0"]
+
+position = Vector2( -409.4, -877.95 )
+scale = Vector2( 1, 1.64752 )
+shape = SubResource( 1 )
+
+

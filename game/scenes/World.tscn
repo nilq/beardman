@@ -1,59 +1,103 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://sound/Lumme/Down The Halls.wav" type="AudioStream" id=1]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/rooms/room_small.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/rooms/room_start.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/rooms/door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/rooms/door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/rooms/roooooms.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sound/Lumme/Down The Halls.wav" type="AudioStream" id=3]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" index="0"]
 
-position = Vector2( 2250, 610 )
+position = Vector2( 2170.79, 1029.83 )
 z_index = -100
 _sections_unfolded = [ "Z Index" ]
 
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." index="0"]
+[node name="Doors" type="Node2D" parent="." index="0"]
 
-stream = ExtResource( 1 )
+position = Vector2( 1167, 655 )
+
+[node name="Door2" parent="Doors" index="0" instance=ExtResource( 1 )]
+
+position = Vector2( -2707.91, -793.734 )
+rotation = -3.10916
+
+[node name="Door3" parent="Doors" index="1" instance=ExtResource( 1 )]
+
+position = Vector2( -777.355, -542.733 )
+rotation = -1.56981
+
+[node name="Door5" parent="Doors" index="2" instance=ExtResource( 1 )]
+
+position = Vector2( 10152.5, 2640.28 )
+rotation = -4.68708
+
+[node name="Door6" parent="Doors" index="3" instance=ExtResource( 1 )]
+
+position = Vector2( 7027.33, 2624.03 )
+rotation = -1.56981
+
+[node name="Door7" parent="Doors" index="4" instance=ExtResource( 1 )]
+
+position = Vector2( -1936.39, 1012.53 )
+rotation = 1.5621
+
+[node name="Door8" parent="Doors" index="5" instance=ExtResource( 1 )]
+
+position = Vector2( -2507.75, 419.409 )
+rotation = 0.0638884
+
+[node name="Door9" parent="Doors" index="6" instance=ExtResource( 1 )]
+
+position = Vector2( 4571.62, 3455.75 )
+rotation = -4.6799
+
+[node name="Door10" parent="Doors" index="7" instance=ExtResource( 1 )]
+
+position = Vector2( 2824.9, 2100.83 )
+rotation = -0.038534
+
+[node name="Door11" parent="Doors" index="8" instance=ExtResource( 1 )]
+
+position = Vector2( -64.521, 2596 )
+rotation = -3.12057
+
+[node name="Door12" parent="Doors" index="9" instance=ExtResource( 1 )]
+
+position = Vector2( 283.734, 2508.94 )
+rotation = -4.67193
+
+[node name="Door13" parent="Doors" index="10" instance=ExtResource( 1 )]
+
+position = Vector2( -53.6379, 1094.15 )
+rotation = 0.0179651
+
+[node name="Door14" parent="Doors" index="11" instance=ExtResource( 1 )]
+
+position = Vector2( 7265.15, -255.335 )
+rotation = -4.70748
+
+[node name="Door15" parent="Doors" index="12" instance=ExtResource( 1 )]
+
+position = Vector2( 4133.85, -252.967 )
+rotation = -1.56981
+
+[node name="Door16" parent="Doors" index="13" instance=ExtResource( 1 )]
+
+position = Vector2( 175.551, 209.727 )
+rotation = -3.1534
+
+[node name="Door17" parent="Doors" index="14" instance=ExtResource( 1 )]
+
+position = Vector2( 162.198, -1290.82 )
+rotation = 0.0114646
+
+[node name="Rooooms" parent="." index="1" instance=ExtResource( 2 )]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 3 )
 volume_db = -10.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
-
-[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
-
-position = Vector2( -273.551, 410.715 )
-rotation = 2.17378
-scale = Vector2( 1, 1 )
-
-[node name="RoomSmall" parent="." index="2" instance=ExtResource( 3 )]
-
-position = Vector2( 1887, 1075 )
-
-[node name="RoomStart" parent="." index="3" instance=ExtResource( 4 )]
-
-position = Vector2( -453, 625 )
-
-[node name="Doors" type="Node2D" parent="." index="4"]
-
-position = Vector2( 1167, 655 )
-
-[node name="Door" parent="Doors" index="0" instance=ExtResource( 5 )]
-
-[node name="Door2" parent="Doors" index="1" instance=ExtResource( 5 )]
-
-position = Vector2( -1653.79, 294.104 )
-rotation = 3.11878
-
-[node name="Door3" parent="Doors" index="2" instance=ExtResource( 5 )]
-
-position = Vector2( 730.001, 1130.67 )
-rotation = -3.13774
-
-[node name="Door4" parent="Doors" index="3" instance=ExtResource( 5 )]
-
-position = Vector2( 1023.74, 1071.06 )
-rotation = 1.56692
 
 

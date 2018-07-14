@@ -3,7 +3,6 @@
 [node name="blood" type="Sprite"]
 
 position = Vector2( 7.62939e-006, 0 )
-z_index = -1
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 

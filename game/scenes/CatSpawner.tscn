@@ -1,18 +1,22 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/Spawner.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://sprites/catspawn.png" type="Texture" id=2]
 
 [node name="CatSpawner" type="Node2D"]
 
 position = Vector2( 40, 30 )
+z_index = 1
 script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+position = Vector2( -34.6417, -29.6533 )
+scale = Vector2( 0.722866, 0.722866 )
 texture = ExtResource( 2 )
 
 
