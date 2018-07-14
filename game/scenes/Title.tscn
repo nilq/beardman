@@ -20,7 +20,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" index="0"]
 
 [node name="titlebg" type="Sprite" parent="." index="0"]
 
@@ -43,7 +43,7 @@ _sections_unfolded = [ "Pause" ]
 position = Vector2( 980, 719 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 4
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
