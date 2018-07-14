@@ -161,6 +161,7 @@ shape = SubResource( 1 )
 
 [node name="RoomBall" type="Sprite" parent="." index="16"]
 
+editor/display_folded = true
 position = Vector2( 3756.23, 1119.7 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
@@ -770,16 +771,18 @@ shape = SubResource( 1 )
 
 [node name="RoomOrgan" type="Sprite" parent="." index="22"]
 
-position = Vector2( 2330, 7300 )
+position = Vector2( 2330, 7320 )
+scale = Vector2( 1.51167, 1.51167 )
 texture = ExtResource( 10 )
-_sections_unfolded = [ "Z Index" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="RoomOrgan" index="0"]
 
-position = Vector2( -3548, -1348 )
+position = Vector2( -2347.08, -904.962 )
+scale = Vector2( 0.661521, 0.661522 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -793,7 +796,7 @@ bounce = 0.0
 position = Vector2( 0.000488281, 0.17688 )
 scale = Vector2( 1, 1.00028 )
 build_mode = 0
-polygon = PoolVector2Array( 4398, 127.788, 4618, 308, 4738, 398, 4848, 538, 4908, 658, 4918, 748, 4898, 868, 4778, 998, 4798, 1368, 4938, 1518, 4838, 1848, 4758, 1968, 4508, 2227.2, 4578, 2257.19, 4688, 2268, 4948, 2118, 5108.47, 1612.66, 5143.11, 1355.32, 5184.65, 1046.74, 5064.94, 551.568, 4711.24, 246.845, 4418, 38 )
+polygon = PoolVector2Array( 4398, 127.788, 4618, 308, 4738, 398, 4848, 538, 4908, 658, 4918, 748, 4898, 868, 4778, 997.544, 4798, 1368, 4938, 1518, 4838, 1848, 4758, 1968, 4578, 2157.22, 4508, 2227.2, 4578, 2257.19, 4688, 2268, 4948, 2118, 5108.47, 1612.66, 5143.11, 1355.32, 5184.65, 1046.74, 5064.94, 551.568, 4711.24, 246.845, 4418, 38 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RoomOrgan/StaticBody2D2" index="1"]
 
@@ -802,7 +805,9 @@ polygon = PoolVector2Array( 3958, 848, 4368, 818, 4388, 1038, 4358, 1588, 3958, 
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="RoomOrgan" index="1"]
 
-position = Vector2( -850, -230 )
+editor/display_folded = true
+position = Vector2( -562.293, -165.38 )
+scale = Vector2( 0.661521, 0.661522 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -819,9 +824,10 @@ shape = SubResource( 1 )
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="RoomOrgan" index="2"]
 
-position = Vector2( -90.7192, -758.5 )
+editor/display_folded = true
+position = Vector2( -5.37756, -492.301 )
 rotation = 1.56865
-scale = Vector2( 1, 1 )
+scale = Vector2( 0.661522, 0.661521 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -838,8 +844,10 @@ shape = SubResource( 1 )
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="RoomOrgan" index="3"]
 
-position = Vector2( -203.26, 479.535 )
+editor/display_folded = true
+position = Vector2( -134.461, 303.992 )
 rotation = -1.5853
+scale = Vector2( 0.661521, 0.661521 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
