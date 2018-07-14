@@ -12,7 +12,14 @@ config_version=3
 
 config/name="New Game Project"
 run/main_scene="res://scenes/World.tscn"
-config/icon="res://icon.png"
+config/icon="res://sprites/upperbody.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [input]
 
