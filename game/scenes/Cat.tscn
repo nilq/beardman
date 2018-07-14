@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/Enemy_Cat.gd" type="Script" id=1]
-[ext_resource path="res://sprites/cat/frame_1.png" type="Texture" id=2]
-[ext_resource path="res://sprites/cat/frame_2.png" type="Texture" id=3]
-[ext_resource path="res://sprites/cat/frame_3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/cat/readyattack.png" type="Texture" id=2]
+[ext_resource path="res://sprites/cat/attack.png" type="Texture" id=3]
+[ext_resource path="res://sprites/cat/frame_1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/cat/frame_2.png" type="Texture" id=5]
+[ext_resource path="res://sprites/cat/frame_3.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -14,13 +16,18 @@ height = 52.9651
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "default",
+"name": "attack",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "movement",
 "speed": 5.0
 } ]
 
-[node name="Enemy_Cat" type="KinematicBody2D"]
+[node name="Enemy_Cat" type="KinematicBody2D" index="0"]
 
 position = Vector2( 39.4466, 64.6337 )
 rotation = -1.57146
@@ -41,13 +48,13 @@ rotation = 1.56623
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Movement" type="AnimatedSprite" parent="." index="1"]
+[node name="Animation" type="AnimatedSprite" parent="." index="1"]
 
 position = Vector2( -14.3095, 24.6424 )
 rotation = 1.5789
 scale = Vector2( 0.325677, 0.291404 )
 frames = SubResource( 2 )
-animation = "default"
-playing = true
+animation = "movement"
+frame = 1
 
 

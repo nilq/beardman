@@ -11,7 +11,7 @@ var speed 		 = 7
 var attack_range = 100
 var angle  		 = 0
 
-var attack_interval = 1
+var attack_interval = 0.5
 var attack_timer
 
 var random_angle_multiplier = rand_range(-target_range, target_range)
@@ -19,6 +19,7 @@ var random_angle_multiplier = rand_range(-target_range, target_range)
 func _ready():
 	self.set_meta("type", "enemy")
 	self.set_meta("variant", "cat")
+	$Animation.play("movement")
 	
 	var timer = Timer.new()
 	timer.set_wait_time(0.25)
@@ -71,5 +72,12 @@ func try_attack(collision):
 	&& collision != null \
 	&& collision.collider.has_meta("type") \
 	&& collision.collider.get_meta("type") != "enemy":
+		self.set_z_index(1000)
+		$Animation.play("attack")
+		$Animation.connect("animation_finished", self, "resume_movement")
 		collision.collider.apply_damage(damage)
 		attack_timer.start()
+		
+func resume_movement():
+	self.set_z_index(0)
+	$Animation.play("movement")
