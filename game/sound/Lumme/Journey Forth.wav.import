@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Journey Forth.wav-228e24200811ba7870abf4a43a72291d.sample"
+
+[deps]
+
+source_file="res://sound/Lumme/Journey Forth.wav"
+dest_files=[ "res://.import/Journey Forth.wav-228e24200811ba7870abf4a43a72291d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
