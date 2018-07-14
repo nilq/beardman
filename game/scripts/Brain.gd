@@ -13,10 +13,10 @@ func _ready():
 
 func _process(delta):
   if sanity_bar._sanityLevel > 75:
-    self.frame = 1
+    self.frame = 0
   elif sanity_bar._sanityLevel > 50:
-    self.frame = 2
+    self.frame = 1
   elif sanity_bar._sanityLevel > 25:
-    self.frame = 3
+    self.frame = 2
   else:
-    self.frame = 4
+    self.frame = 3
