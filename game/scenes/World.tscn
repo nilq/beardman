@@ -1,10 +1,10 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://sprites/room.png" type="Texture" id=1]
 [ext_resource path="res://scripts/characterMovement.gd" type="Script" id=2]
-[ext_resource path="res://sprites/standing.png" type="Texture" id=3]
-[ext_resource path="res://sprites/leftleg.png" type="Texture" id=4]
-[ext_resource path="res://sprites/rightleg.png" type="Texture" id=5]
+[ext_resource path="res://sprites/leftleg.png" type="Texture" id=3]
+[ext_resource path="res://sprites/rightleg.png" type="Texture" id=4]
+[ext_resource path="res://sprites/standing.png" type="Texture" id=5]
 [ext_resource path="res://sprites/upperbody.png" type="Texture" id=6]
 [ext_resource path="res://sprites/beard.png" type="Texture" id=7]
 [ext_resource path="res://scripts/Beard.gd" type="Script" id=8]
@@ -12,10 +12,7 @@
 [ext_resource path="res://sound/punch.wav" type="AudioStream" id=10]
 [ext_resource path="res://sound/meow.wav" type="AudioStream" id=11]
 [ext_resource path="res://sound/splash.wav" type="AudioStream" id=12]
-[ext_resource path="res://scripts/Enemy_Cat.gd" type="Script" id=13]
-[ext_resource path="res://sprites/cat/frame_1.png" type="Texture" id=14]
-[ext_resource path="res://sprites/cat/frame_2.png" type="Texture" id=15]
-[ext_resource path="res://sprites/cat/frame_3.png" type="Texture" id=16]
+[ext_resource path="res://enemies/CatSpawner.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -25,15 +22,15 @@ extents = Vector2( 10, 948.986 )
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "still",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "walking",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "still",
+"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=3]
@@ -41,22 +38,7 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 10.0
 
-[sub_resource type="CapsuleShape2D" id=4]
-
-custom_solver_bias = 0.0
-radius = 15.0768
-height = 44.4088
-
-[sub_resource type="SpriteFrames" id=5]
-
-animations = [ {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[node name="World" type="Node2D" index="0"]
+[node name="World" type="Node2D"]
 
 [node name="Room" type="Sprite" parent="." index="0"]
 
@@ -133,12 +115,17 @@ polygon = PoolVector2Array( 315.89, -17.1879, 120.212, 169.172, 306.572, 318.259
 
 [node name="Player" type="KinematicBody2D" parent="." index="1"]
 
-position = Vector2( 504.622, 256.262 )
+editor/display_folded = true
+position = Vector2( 460, 1080 )
+rotation = -0.862941
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Lowerbody" type="AnimatedSprite" parent="Player" index="0"]
 
@@ -146,12 +133,13 @@ rotation = -1.5708
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
 animation = "walking"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Upperbody" type="Sprite" parent="Player" index="1"]
 
-position = Vector2( -1.67023, -3.05176e-05 )
+position = Vector2( -1.67023, -3.05176e-005 )
 rotation = -1.5708
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
@@ -261,31 +249,12 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Material" ]
 
-[node name="Enemy_Cat" type="KinematicBody2D" parent="." index="2"]
+[node name="CatSpawner" parent="." index="2" instance=ExtResource( 13 )]
 
-position = Vector2( 608.945, 664.944 )
-rotation = -1.57146
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-script = ExtResource( 13 )
-_sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
+position = Vector2( 1000, -210 )
 
-[node name="Collision" type="CollisionShape2D" parent="Enemy_Cat" index="0"]
+[node name="CatSpawner2" parent="." index="3" instance=ExtResource( 13 )]
 
-position = Vector2( 1.99266, 11.0013 )
-rotation = 1.56623
-shape = SubResource( 4 )
-
-[node name="Movement" type="AnimatedSprite" parent="Enemy_Cat" index="1"]
-
-position = Vector2( 1.1123, 14.2565 )
-rotation = 1.5789
-scale = Vector2( 0.325677, 0.291404 )
-frames = SubResource( 5 )
-animation = "default"
-frame = 2
-playing = true
+position = Vector2( 450, -210 )
 
 

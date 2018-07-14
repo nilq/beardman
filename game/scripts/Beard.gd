@@ -52,7 +52,7 @@ func fire():
 
 		point = result.position
 		
-		if result.collider.name == "Enemy_Cat":
+		if "Enemy_Cat" in result.collider.name:
 			var meow   = $Meow.duplicate()
 			var splash = $Splash.duplicate()
 
