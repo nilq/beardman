@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/CatSpawner.tscn" type="PackedScene" id=2]
@@ -9,13 +9,14 @@
 [ext_resource path="res://sprites/rooms/room_study.png" type="Texture" id=7]
 [ext_resource path="res://sprites/rooms/room_hallway.png" type="Texture" id=8]
 [ext_resource path="res://sprites/rooms/room_hallway2.png" type="Texture" id=9]
+[ext_resource path="res://sprites/rooms/room_organ.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 1074.94 )
 
-[node name="Rooms" type="Node"]
+[node name="Rooms" type="Node" index="0"]
 
 _sections_unfolded = [ "Z Index" ]
 
@@ -42,15 +43,15 @@ position = Vector2( 3544.38, 1161.62 )
 
 [node name="CatSpawner5" parent="." index="5" instance=ExtResource( 2 )]
 
-position = Vector2( 633.593, 3447.53 )
+position = Vector2( 770, 3400 )
 
 [node name="CatSpawner6" parent="." index="6" instance=ExtResource( 2 )]
 
-position = Vector2( 337.114, 3147.79 )
+position = Vector2( 530, 3080 )
 
 [node name="CatSpawner7" parent="." index="7" instance=ExtResource( 2 )]
 
-position = Vector2( 3590.54, 3414.95 )
+position = Vector2( 3480, 3390 )
 
 [node name="CatSpawner8" parent="." index="8" instance=ExtResource( 2 )]
 
@@ -62,17 +63,25 @@ position = Vector2( 7304.06, 5344.62 )
 
 [node name="CatSpawner10" parent="." index="10" instance=ExtResource( 2 )]
 
-position = Vector2( 8807.93, 1941.05 )
+position = Vector2( 8810, 1880 )
 
 [node name="CatSpawner11" parent="." index="11" instance=ExtResource( 2 )]
 
-position = Vector2( 11700, 4810.16 )
+position = Vector2( 11740, 4770 )
 
 [node name="CatSpawner12" parent="." index="12" instance=ExtResource( 2 )]
 
-position = Vector2( 11653.2, 4015.16 )
+position = Vector2( 11660, 4090 )
 
-[node name="StartRoom" type="Sprite" parent="." index="13"]
+[node name="CatSpawner13" parent="." index="13" instance=ExtResource( 2 )]
+
+position = Vector2( 3010, 6500 )
+
+[node name="CatSpawner14" parent="." index="14" instance=ExtResource( 2 )]
+
+position = Vector2( 2940, 7820 )
+
+[node name="StartRoom" type="Sprite" parent="." index="15"]
 
 editor/display_folded = true
 position = Vector2( 658.479, 594.225 )
@@ -150,9 +159,8 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -402.175, -149.987 )
 shape = SubResource( 1 )
 
-[node name="RoomBall" type="Sprite" parent="." index="14"]
+[node name="RoomBall" type="Sprite" parent="." index="16"]
 
-editor/display_folded = true
 position = Vector2( 3756.23, 1119.7 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
@@ -231,7 +239,7 @@ bounce = 0.0
 position = Vector2( -440, 70 )
 shape = SubResource( 1 )
 
-[node name="RoomKitchen" type="Sprite" parent="." index="15"]
+[node name="RoomKitchen" type="Sprite" parent="." index="17"]
 
 editor/display_folded = true
 position = Vector2( 747.647, 2790.72 )
@@ -313,7 +321,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -402.175, -149.987 )
 shape = SubResource( 1 )
 
-[node name="RoomSmall" type="Sprite" parent="." index="16"]
+[node name="RoomSmall" type="Sprite" parent="." index="18"]
 
 editor/display_folded = true
 position = Vector2( 3273.91, 3537.12 )
@@ -395,7 +403,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -402.175, -149.987 )
 shape = SubResource( 1 )
 
-[node name="RoomStudy" type="Sprite" parent="." index="17"]
+[node name="RoomStudy" type="Sprite" parent="." index="19"]
 
 editor/display_folded = true
 position = Vector2( 6814.56, 4759.77 )
@@ -532,7 +540,7 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -1307.15, 167.218, -1055.57, 347.979, -651.251, 214.41, -449.092, 506.818, -672.911, 647.608, -481.582, 701.758, -293.862, 647.608, -172.727, 687.777, -157.994, 1046.28, -1258.04, 1016.81 )
 
-[node name="RoomHall" type="Sprite" parent="." index="18"]
+[node name="RoomHall" type="Sprite" parent="." index="20"]
 
 editor/display_folded = true
 position = Vector2( 9018.28, 1549.55 )
@@ -646,7 +654,7 @@ position = Vector2( -409.4, -877.95 )
 scale = Vector2( 1, 1.64752 )
 shape = SubResource( 1 )
 
-[node name="RoomHall2" type="Sprite" parent="." index="19"]
+[node name="RoomHall2" type="Sprite" parent="." index="21"]
 
 editor/display_folded = true
 position = Vector2( 11908.2, 4439.48 )
@@ -758,6 +766,92 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -409.4, -877.95 )
 scale = Vector2( 1, 1.64752 )
+shape = SubResource( 1 )
+
+[node name="RoomOrgan" type="Sprite" parent="." index="22"]
+
+position = Vector2( 2330, 7300 )
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="RoomOrgan" index="0"]
+
+position = Vector2( -3548, -1348 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoomOrgan/StaticBody2D2" index="0"]
+
+position = Vector2( 0.000488281, 0.17688 )
+scale = Vector2( 1, 1.00028 )
+build_mode = 0
+polygon = PoolVector2Array( 4398, 127.788, 4618, 308, 4738, 398, 4848, 538, 4908, 658, 4918, 748, 4898, 868, 4778, 998, 4798, 1368, 4938, 1518, 4838, 1848, 4758, 1968, 4508, 2227.2, 4578, 2257.19, 4688, 2268, 4948, 2118, 5108.47, 1612.66, 5143.11, 1355.32, 5184.65, 1046.74, 5064.94, 551.568, 4711.24, 246.845, 4418, 38 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RoomOrgan/StaticBody2D2" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 3958, 848, 4368, 818, 4388, 1038, 4358, 1588, 3958, 1588 )
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="RoomOrgan" index="1"]
+
+position = Vector2( -850, -230 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomOrgan/StaticBody2D9" index="0"]
+
+position = Vector2( -422, 90 )
+scale = Vector2( 1, 1.07517 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="RoomOrgan" index="2"]
+
+position = Vector2( -90.7192, -758.5 )
+rotation = 1.56865
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomOrgan/StaticBody2D8" index="0"]
+
+position = Vector2( -474.507, 167.057 )
+scale = Vector2( 1, 1.03544 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="RoomOrgan" index="3"]
+
+position = Vector2( -203.26, 479.535 )
+rotation = -1.5853
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomOrgan/StaticBody2D7" index="0"]
+
+position = Vector2( -425.919, -18.4697 )
+scale = Vector2( 1, 1.10289 )
 shape = SubResource( 1 )
 
 
