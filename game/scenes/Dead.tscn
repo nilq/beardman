@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/Dead.gd" type="Script" id=1]
 [ext_resource path="res://sprites/gameover.png" type="Texture" id=2]
@@ -8,8 +8,7 @@
 [ext_resource path="res://sprites/invisible.png" type="Texture" id=6]
 [ext_resource path="res://scripts/BeardSwallow.gd" type="Script" id=7]
 [ext_resource path="res://sprites/bloodborder.png" type="Texture" id=8]
-[ext_resource path="res://sprites/fonts/FiraSans-Book.otf" type="DynamicFontData" id=9]
-[ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://sprites/butt.png" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -32,14 +31,6 @@ size = 60
 use_mipmaps = false
 use_filter = false
 font_data = SubResource( 2 )
-_sections_unfolded = [ "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=4]
-
-size = 70
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 9 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="CanvasLayer" type="CanvasLayer" index="0"]
@@ -111,9 +102,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1070.0
+margin_left = 1060.0
 margin_top = 640.0
-margin_right = 1900.0
+margin_right = 1890.0
 margin_bottom = 940.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -142,9 +133,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1510.0
+margin_left = 1480.0
 margin_top = 640.0
-margin_right = 1900.0
+margin_right = 1870.0
 margin_bottom = 940.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -168,32 +159,32 @@ _sections_unfolded = [ "BBCode", "Visibility", "custom_colors", "custom_fonts", 
 
 [node name="MenuButton" type="MenuButton" parent="." index="6"]
 
-modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1080.0
+margin_left = 1060.0
 margin_top = 770.0
-margin_right = 1520.0
-margin_bottom = 890.0
+margin_right = 1471.0
+margin_bottom = 938.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
+hint_tooltip = "Die once more"
+focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 4 )
 toggle_mode = false
 action_mode = 0
-enabled_focus_mode = 0
+enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Die again?"
-icon = ExtResource( 10 )
+text = "<"
+icon = ExtResource( 9 )
 flat = true
 align = 0
 items = [  ]
-_sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Material", "Visibility", "custom_colors", "custom_fonts" ]
 
 
