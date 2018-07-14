@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/rooms/room_start.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/rooms/door.tscn" type="PackedScene" id=5]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" index="0"]
 
 position = Vector2( 2250, 610 )
 z_index = -100
@@ -25,7 +25,6 @@ bus = "Master"
 
 position = Vector2( -273.551, 410.715 )
 rotation = 2.17378
-scale = Vector2( 1, 1 )
 
 [node name="RoomSmall" parent="." index="2" instance=ExtResource( 3 )]
 
