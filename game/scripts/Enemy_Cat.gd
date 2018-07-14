@@ -11,18 +11,30 @@ var speed 		 = 7
 var attack_range = 100
 var angle  		 = 0
 
+var attack_interval = 1
+var attack_timer
+
 var random_angle_multiplier = rand_range(-target_range, target_range)
 
 func _ready():
-	var timer = Timer.new()
 	self.set_meta("type", "enemy")
 	self.set_meta("variant", "cat")
+	
+	var timer = Timer.new()
 	timer.set_wait_time(0.25)
 	timer.connect("timeout", self, "change_direction")
 	
 	add_child(timer)
 	
 	timer.start()
+	
+	attack_timer = Timer.new()
+	attack_timer.set_wait_time(attack_interval)
+	attack_timer.autostart = false
+	attack_timer.one_shot = true
+	attack_timer.process_mode = Timer.TIMER_PROCESS_IDLE
+	add_child(attack_timer)
+	
 
 func change_direction():
 	direction = self.get_target_direction()
@@ -39,10 +51,7 @@ func _process(delta):
 	
 	look_at(smooth_direction)
 	
-	var collision = move_and_collide(Vector2(0,0))
 	
-	if collision != null && collision.collider.has_meta("type") && collision.collider.get_meta("type") != "enemy":
-		collision.collider.apply_damage(damage)
 
 	if self.get_position().distance_to(smooth_direction) > attack_range:
 		var a = smooth_direction.angle_to_point(self.get_position())
@@ -54,4 +63,13 @@ func _process(delta):
 			if not "Player" in result.collider.name and not "Enemy_Cat" in result.collider.name:
 				angle = lerp(angle, angle + random_angle_multiplier, delta * 5)
 
-		self.move_and_collide(Vector2(cos(angle), sin(angle)) * speed)
+		var collision = self.move_and_collide(Vector2(cos(angle), sin(angle)) * speed)
+		try_attack(collision)
+		
+func try_attack(collision):
+	if attack_timer.is_stopped() \
+	&& collision != null \
+	&& collision.collider.has_meta("type") \
+	&& collision.collider.get_meta("type") != "enemy":
+		collision.collider.apply_damage(damage)
+		attack_timer.start()

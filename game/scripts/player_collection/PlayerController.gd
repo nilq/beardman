@@ -29,7 +29,6 @@ func _ready():
 func update_viewport():
 	var canvas_transform = self.get_viewport().get_canvas_transform()
 	canvas_transform.o   = -self.get_global_position() + screen_size / 2.0
-
 	self.get_viewport().set_canvas_transform(canvas_transform)
 
 
