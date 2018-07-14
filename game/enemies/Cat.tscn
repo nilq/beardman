@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/Enemy_Cat.gd" type="Script" id=1]
+[ext_resource path="res://sprites/cat/frame_1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/cat/frame_2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/cat/frame_3.png" type="Texture" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 15.0768
+height = 44.4088
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Enemy_Cat" type="KinematicBody2D"]
+
+position = Vector2( 42.673, 71.4449 )
+rotation = -1.57146
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility", "Z Index", "collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( 1.99266, 11.0013 )
+rotation = 1.56623
+shape = SubResource( 1 )
+
+[node name="Movement" type="AnimatedSprite" parent="." index="1"]
+
+position = Vector2( 1.1123, 14.2565 )
+rotation = 1.5789
+scale = Vector2( 0.325677, 0.291404 )
+frames = SubResource( 2 )
+animation = "default"
+playing = true
+
+

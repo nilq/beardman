@@ -1,15 +1,18 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://sprites/room.png" type="Texture" id=1]
 [ext_resource path="res://scripts/characterMovement.gd" type="Script" id=2]
-[ext_resource path="res://sprites/standing.png" type="Texture" id=3]
-[ext_resource path="res://sprites/leftleg.png" type="Texture" id=4]
-[ext_resource path="res://sprites/rightleg.png" type="Texture" id=5]
+[ext_resource path="res://sprites/leftleg.png" type="Texture" id=3]
+[ext_resource path="res://sprites/rightleg.png" type="Texture" id=4]
+[ext_resource path="res://sprites/standing.png" type="Texture" id=5]
 [ext_resource path="res://sprites/upperbody.png" type="Texture" id=6]
 [ext_resource path="res://sprites/beard.png" type="Texture" id=7]
 [ext_resource path="res://scripts/Beard.gd" type="Script" id=8]
 [ext_resource path="res://sound/whip.wav" type="AudioStream" id=9]
 [ext_resource path="res://sound/punch.wav" type="AudioStream" id=10]
+[ext_resource path="res://sound/meow.wav" type="AudioStream" id=11]
+[ext_resource path="res://sound/splash.wav" type="AudioStream" id=12]
+[ext_resource path="res://enemies/CatSpawner.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -19,15 +22,15 @@ extents = Vector2( 10, 948.986 )
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "still",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "walking",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "still",
+"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=3]
@@ -35,10 +38,11 @@ animations = [ {
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="World" type="Node2D" index="0"]
+[node name="World" type="Node2D"]
 
 [node name="Room" type="Sprite" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( 719.057, 424.954 )
 texture = ExtResource( 1 )
 
@@ -111,12 +115,17 @@ polygon = PoolVector2Array( 315.89, -17.1879, 120.212, 169.172, 306.572, 318.259
 
 [node name="Player" type="KinematicBody2D" parent="." index="1"]
 
-position = Vector2( 504.622, 256.262 )
+editor/display_folded = true
+position = Vector2( 460, 1080 )
+rotation = -0.862941
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Lowerbody" type="AnimatedSprite" parent="Player" index="0"]
 
@@ -130,7 +139,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Upperbody" type="Sprite" parent="Player" index="1"]
 
-position = Vector2( -1.67023, -3.05176e-05 )
+position = Vector2( -1.67023, -3.05176e-005 )
 rotation = -1.5708
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
@@ -142,7 +151,6 @@ shape = SubResource( 3 )
 
 [node name="Beard" type="Sprite" parent="Player" index="3"]
 
-editor/display_folded = true
 position = Vector2( 39.3419, 103.27 )
 rotation = -1.5708
 scale = Vector2( 0.407535, 0.376114 )
@@ -196,13 +204,31 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
+[node name="Meow" type="AudioStreamPlayer" parent="Player/Beard" index="4"]
+
+stream = ExtResource( 11 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Splash" type="AudioStreamPlayer" parent="Player/Beard" index="5"]
+
+stream = ExtResource( 12 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
 [node name="Cam" type="Camera2D" parent="Player" index="4"]
 
 position = Vector2( 77.7513, 13.9592 )
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 2, 2 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
@@ -221,5 +247,14 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+_sections_unfolded = [ "Material" ]
+
+[node name="CatSpawner" parent="." index="2" instance=ExtResource( 13 )]
+
+position = Vector2( 1000, -210 )
+
+[node name="CatSpawner2" parent="." index="3" instance=ExtResource( 13 )]
+
+position = Vector2( 450, -210 )
 
 

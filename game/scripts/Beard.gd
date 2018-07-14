@@ -51,6 +51,19 @@ func fire():
 		smash.play()
 
 		point = result.position
+		
+		if "Enemy_Cat" in result.collider.name:
+			var meow   = $Meow.duplicate()
+			var splash = $Splash.duplicate()
+
+			add_child(meow)
+			add_child(splash)
+
+			meow.play()
+			splash.play()
+
+
+			result.collider.queue_free()
 
 	var distance   = point.distance_to(self.get_global_position())
 	var dist_scale = distance / (self.get_texture().get_size().y + 10)
