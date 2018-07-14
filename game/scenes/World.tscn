@@ -141,6 +141,7 @@ z_index = -10
 z_as_relative = false
 frames = SubResource( 2 )
 animation = "walking"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform", "Z Index" ]
 
