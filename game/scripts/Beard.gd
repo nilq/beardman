@@ -8,7 +8,7 @@ onready var blood = preload( "res://scenes/blood.tscn" ).instance()
 
 onready var player = self.get_node("..")
 
-var healingfactor = -10
+var healingfactor = -3
 
 var is_bearding = false
 var beard_time  = 0.075

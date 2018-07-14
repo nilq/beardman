@@ -3,7 +3,7 @@ extends KinematicBody2D
 onready var player = get_node("../Player")
 
 var target_range = 100
-var damage = 5
+var damage = 10
 onready var direction 	 	 = self.get_target_direction()
 onready var smooth_direction = direction
 
@@ -11,7 +11,7 @@ var speed 		 = 7
 var attack_range = 100
 var angle  		 = 0
 
-var attack_interval = 0.5
+var attack_interval = 0.4
 var attack_timer
 
 var random_angle_multiplier = rand_range(-target_range, target_range)

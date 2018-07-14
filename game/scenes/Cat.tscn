@@ -28,7 +28,7 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[node name="Enemy_Cat" type="KinematicBody2D" index="0"]
+[node name="Enemy_Cat" type="KinematicBody2D"]
 
 position = Vector2( 39.4466, 64.6337 )
 rotation = -1.57146
@@ -46,6 +46,7 @@ __meta__ = {
 
 position = Vector2( -4.64825, 24.4401 )
 rotation = 1.56623
+scale = Vector2( 1.68209, 1 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
