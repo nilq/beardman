@@ -7,15 +7,12 @@ var dy = 0
 
 var friction = 10
 
-var drag_margin_left = -0.7
-var drag_margin_right = -0.7
+
 
 var screen_size
 
-var right_limit  = INF
-var left_limit   = -INF
-var bottom_limit = INF
-var top_limit    = -INF
+var camera_speed = 2
+
 onready var sanity = $Sanity
 
 var door
@@ -56,11 +53,19 @@ func _physics_process(delta):
 		
 	do_mouse_look()
 
-	self.update_camera(self.get_position())
+	self.update_camera(self.get_position(), delta)
 
 func apply_damage(amount):
-	#print("outch! On a scale from one to ten this is a solid " + str(amount))
 	sanity.sanity_set(sanity.sanity_get() - amount)
+	
+	var animation = sanity.get_node("AnimationPlayer")
+	if(amount > 0): 
+		animation.stop(true)
+		animation.play("Damage")
+	else:
+		animation.stop(true)
+		animation.get_node("Blood").set_modulate(Color(225, 225, 225, 0))
+		animation.play("Healing")
 
 func do_movement():
 	var x = 0
@@ -92,16 +97,10 @@ func do_mouse_look():
 
 	look_at(mouse_pos)
 
-func update_camera(character_pos):
+func update_camera(character_pos, delta):
 	var new_camera_pos = self.get_global_position()
 
-	if character_pos.x > self.get_global_position().x + screen_size.x * (drag_margin_right - 0.5):
-		new_camera_pos.x = character_pos.x - screen_size.x * (drag_margin_right - 0.5)
-    
-	elif character_pos.x < self.get_global_position().x + screen_size.x * (drag_margin_left - 0.5):
-		new_camera_pos.x = character_pos.x + screen_size.x * (0.5 - drag_margin_left)
-
-	new_camera_pos.x = clamp(new_camera_pos.x, left_limit + screen_size.x * 0.5, right_limit - screen_size.x * 0.5)
-	new_camera_pos.y = clamp(new_camera_pos.y, top_limit + screen_size.y * 0.5, bottom_limit - screen_size.y * 0.5)
+	new_camera_pos.x = lerp(new_camera_pos.x, character_pos.x - screen_size.x / 2, delta * camera_speed)
+	new_camera_pos.y = lerp(new_camera_pos.y, character_pos.y - screen_size.y / 2, delta * camera_speed)
 
 	$Cam.set_global_position(new_camera_pos)

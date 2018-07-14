@@ -60,7 +60,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Upperbody" type="Sprite" parent="." index="1"]
 
-position = Vector2( -1.67023, -3.05176e-005 )
+position = Vector2( -1.67023, -3.05176e-05 )
 rotation = -1.5708
 scale = Vector2( 0.5, 0.5 )
 z_index = 100

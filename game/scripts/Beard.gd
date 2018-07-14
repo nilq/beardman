@@ -46,53 +46,55 @@ func fire():
 	
 	# Calculate beard collisions
 	var space_state = get_world_2d().direct_space_state
-	var result 		= space_state.intersect_ray(self.get_global_position(), mouse_pos)
-
-	var point  	   = mouse_pos
 	
-	if result:
-		var smash = $PunchSound
-	
-		smash.set_pitch_scale(rand_range(0.9, 1))		
-		smash.play()
+	for i in range(0, 3):
+		var result 	= space_state.intersect_ray(self.get_global_position(), mouse_pos + Vector2(-10 + i * 10, 10 + i * 10))
 
-		point = result.position
+		var point  	= mouse_pos
 		
-		if "Enemy_Cat" in result.collider.name:
-			var meow   = $Meow.duplicate()
-			var splash = $Splash.duplicate()
+		if result:
+			var smash = $PunchSound
+		
+			smash.set_pitch_scale(rand_range(0.9, 1))		
+			smash.play()
+	
+			point = result.position
 			
-			meow.set_pitch_scale(rand_range(0.95, 1.25))
-			splash.set_pitch_scale(rand_range(0.95, 1.25))
-
-			add_child(meow)
-			add_child(splash)
-
-			meow.play()
-			splash.play()
-			
-			var new_blood = blood.duplicate()
-			
-			new_blood.set_rotation(rand_range(-360, 360))
-			new_blood.set_position(result.position)
-			var blood_file = "blood_" + str(ceil(rand_range(0.1, 2.9)))
-			new_blood.set_texture(load("res://sprites/cat/" + blood_file + ".png"))
-			self.get_node("../..").add_child(new_blood)
-			player.apply_damage(healingfactor)
-			result.collider.queue_free()
-
-	var distance   = point.distance_to(self.get_global_position())
-	var dist_scale = distance / (self.get_texture().get_size().y + 10)
-
-
-	var tween = $GunTween
-	tween.interpolate_property(self, "scale",
-	                BEARD_SCALE, Vector2(BEARD_SCALE.x, dist_scale), beard_time,
-	                Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
-					
-	tween.interpolate_callback(self, beard_time, "retract_beard", distance)
-
-	tween.start()
+			if "Enemy_Cat" in result.collider.name:
+				var meow   = $Meow.duplicate()
+				var splash = $Splash.duplicate()
+	
+				meow.set_pitch_scale(rand_range(0.95, 1.25))
+				splash.set_pitch_scale(rand_range(0.95, 1.25))
+	
+				add_child(meow)
+				add_child(splash)
+	
+				meow.play()
+				splash.play()
+	
+				var new_blood = blood.duplicate()
+	
+				new_blood.set_rotation(rand_range(-360, 360))
+				new_blood.set_position(result.position)
+				var blood_file = "blood_" + str(ceil(rand_range(0.1, 2.9)))
+				new_blood.set_texture(load("res://sprites/cat/" + blood_file + ".png"))
+				self.get_node("../..").add_child(new_blood)
+				player.apply_damage(healingfactor)
+				result.collider.queue_free()
+	
+		var distance   = point.distance_to(self.get_global_position())
+		var dist_scale = distance / (self.get_texture().get_size().y + 10)
+	
+	
+		var tween = $GunTween
+		tween.interpolate_property(self, "scale",
+		                BEARD_SCALE, Vector2(BEARD_SCALE.x, dist_scale), beard_time,
+		                Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
+						
+		tween.interpolate_callback(self, beard_time, "retract_beard", distance)
+	
+		tween.start()
 	
 	is_bearding = true
 

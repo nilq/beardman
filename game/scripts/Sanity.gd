@@ -7,6 +7,8 @@ var _sanityDrainRate = 0.5
 var _SanityBarSizeX
 var _SanityBarSizeY
 
+onready var animation = $AnimationPlayer
+
 func _ready():
 	_SanityBarSizeX = $SanityContainer/SanityBar.rect_size.x
 	_SanityBarSizeY = $SanityContainer/SanityBar.rect_size.y
@@ -17,6 +19,12 @@ func sanity_get():
 	
 func sanity_set(sanityLevel):
 	_sanityLevel = sanityLevel
+	
+	if _sanityLevel < 0:
+		get_tree().change_scene("res://scenes/Dead.tscn")
+		
+	if _sanityLevel > 100:
+		_sanityLevel = 100
 
 func _process(delta):
 	_sanityLevel -= _sanityDrainRate * delta
