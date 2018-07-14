@@ -17,6 +17,12 @@ func sanity_get():
 	
 func sanity_set(sanityLevel):
 	_sanityLevel = sanityLevel
+	
+	if _sanityLevel < 0:
+		print ("TODO: game over scene at line 22 in Sanity.gd")
+		
+	if _sanityLevel > 100:
+		_sanityLevel = 100
 
 func _process(delta):
 	_sanityLevel -= _sanityDrainRate * delta
