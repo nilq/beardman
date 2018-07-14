@@ -48,7 +48,6 @@ rotation = 1.5789
 scale = Vector2( 0.325677, 0.291404 )
 frames = SubResource( 2 )
 animation = "default"
-frame = 1
 playing = true
 
 

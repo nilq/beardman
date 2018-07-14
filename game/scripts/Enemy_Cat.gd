@@ -42,7 +42,7 @@ func _process(delta):
 	var collision = move_and_collide(Vector2(0,0))
 	
 	if collision != null && collision.collider.has_meta("type") && collision.collider.get_meta("type") != "enemy":
-		collision.collider.applyDamage(damage)
+		collision.collider.apply_damage(damage)
 
 	if self.get_position().distance_to(smooth_direction) > attack_range:
 		var a = smooth_direction.angle_to_point(self.get_position())

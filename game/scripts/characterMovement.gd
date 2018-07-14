@@ -2,8 +2,10 @@ extends KinematicBody2D
 
 var speed = 5
 
-var x = 0
-var y = 0
+var dx = 0
+var dy = 0
+
+var friction = 10
 
 var drag_margin_left = 0.3
 var drag_margin_right = 0.7
@@ -29,44 +31,46 @@ func update_viewport():
 
 
 func _physics_process(delta):
+	var movement = self.do_movement()
+
+	dx = lerp(dx, 0, delta * friction)
+	dy = lerp(dy, 0, delta * friction)
+
+	var collision = move_and_collide(movement)
 	
-	var movement = self.doMovement()
-	
-	var collision = move_and_collide(movement * speed)
-	
-	doMouseLook()
-	
+	do_mouse_look()
+
 	self.update_camera(self.get_position())
 
-func applyDamage(amount):
+func apply_damage(amount):
 	print("outch! On a scale from one to ten this is a solid " + str(amount))
 
-func doMovement():
-	x = 0
-	y = 0
+func do_movement():
+	var x = 0
+	var y = 0
 
 	if Input.is_action_pressed("ui_down"):
-		y = 1
+		dy = speed
 
 	if Input.is_action_pressed("ui_up"):
-		y = -1
+		dy = -speed
 
 	if Input.is_action_pressed("ui_right"):
-		x = 1
+		dx = speed
 
 	if Input.is_action_pressed("ui_left"):
-		x = -1
+		dx = -speed
 
-	var movement = Vector2(x, y).normalized()
+	var movement = Vector2(dx, dy)
 	
-	if movement.length() == 0:
+	if movement.length() < 2:
 		$Lowerbody.play("still")
 	else:
 		$Lowerbody.play("walking")
 		
 	return movement
 
-func doMouseLook():
+func do_mouse_look():
 	var mouse_pos = $Cam.get_global_mouse_position()
 
 	look_at(mouse_pos)
