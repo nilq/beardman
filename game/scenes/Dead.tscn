@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/Dead.gd" type="Script" id=1]
 [ext_resource path="res://sprites/gameover.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scripts/BeardSwallow.gd" type="Script" id=7]
 [ext_resource path="res://sprites/bloodborder.png" type="Texture" id=8]
 [ext_resource path="res://sprites/butt.png" type="Texture" id=9]
+[ext_resource path="res://scenes/Creditsbutton.tscn" type="PackedScene" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -186,5 +187,10 @@ flat = true
 align = 0
 items = [  ]
 _sections_unfolded = [ "Material", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="TextureButton2" parent="." index="7" instance=ExtResource( 10 )]
+
+margin_left = 1630.0
+margin_right = 1920.0
 
 
