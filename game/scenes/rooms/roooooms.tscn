@@ -1,15 +1,15 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/CatSpawner.tscn" type="PackedScene" id=2]
-[ext_resource path="res://sprites/rooms/room_start.png" type="Texture" id=3]
-[ext_resource path="res://sprites/rooms/room_ballroom.png" type="Texture" id=4]
-[ext_resource path="res://sprites/rooms/room_kitchen.png" type="Texture" id=5]
-[ext_resource path="res://sprites/rooms/room_small.png" type="Texture" id=6]
-[ext_resource path="res://sprites/rooms/room_study.png" type="Texture" id=7]
-[ext_resource path="res://sprites/rooms/room_hallway.png" type="Texture" id=8]
-[ext_resource path="res://sprites/rooms/room_hallway2.png" type="Texture" id=9]
-[ext_resource path="res://sprites/rooms/room_organ.png" type="Texture" id=10]
+[ext_resource path="res://scenes/BarberSpawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/CatSpawner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sprites/rooms/room_start.png" type="Texture" id=4]
+[ext_resource path="res://sprites/rooms/room_ballroom.png" type="Texture" id=5]
+[ext_resource path="res://sprites/rooms/room_kitchen.png" type="Texture" id=6]
+[ext_resource path="res://sprites/rooms/room_small.png" type="Texture" id=7]
+[ext_resource path="res://sprites/rooms/room_study.png" type="Texture" id=8]
+[ext_resource path="res://sprites/rooms/room_hallway.png" type="Texture" id=9]
+[ext_resource path="res://sprites/rooms/room_hallway2.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -25,67 +25,87 @@ _sections_unfolded = [ "Z Index" ]
 position = Vector2( 911.656, 362.691 )
 rotation = 2.05694
 
-[node name="CatSpawner" parent="." index="1" instance=ExtResource( 2 )]
+[node name="BarberSpawner" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 403.027, 838.249 )
+
+[node name="BarberSpawner2" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 1347.27, 2177.66 )
+
+[node name="BarberSpawner3" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 4747.62, 1064.64 )
+
+[node name="BarberSpawner4" parent="." index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 2652.47, 1668.18 )
+
+[node name="BarberSpawner5" parent="." index="5" instance=ExtResource( 2 )]
+
+position = Vector2( 7534.56, 1151.96 )
+
+[node name="BarberSpawner6" parent="." index="6" instance=ExtResource( 2 )]
+
+position = Vector2( 6555.43, 3883.49 )
+
+[node name="BarberSpawner7" parent="." index="7" instance=ExtResource( 2 )]
+
+position = Vector2( 7702.61, 4732.77 )
+
+[node name="CatSpawner" parent="." index="8" instance=ExtResource( 3 )]
 
 position = Vector2( 3728.49, 717.593 )
 
-[node name="CatSpawner2" parent="." index="2" instance=ExtResource( 2 )]
+[node name="CatSpawner2" parent="." index="9" instance=ExtResource( 3 )]
 
 position = Vector2( 4425.22, 797.013 )
 
-[node name="CatSpawner3" parent="." index="3" instance=ExtResource( 2 )]
+[node name="CatSpawner3" parent="." index="10" instance=ExtResource( 3 )]
 
 position = Vector2( 4118.37, 1327.68 )
 
-[node name="CatSpawner4" parent="." index="4" instance=ExtResource( 2 )]
+[node name="CatSpawner4" parent="." index="11" instance=ExtResource( 3 )]
 
 position = Vector2( 3544.38, 1161.62 )
 
-[node name="CatSpawner5" parent="." index="5" instance=ExtResource( 2 )]
+[node name="CatSpawner5" parent="." index="12" instance=ExtResource( 3 )]
 
-position = Vector2( 770, 3400 )
+position = Vector2( 633.593, 3447.53 )
 
-[node name="CatSpawner6" parent="." index="6" instance=ExtResource( 2 )]
+[node name="CatSpawner6" parent="." index="13" instance=ExtResource( 3 )]
 
-position = Vector2( 530, 3080 )
+position = Vector2( 337.114, 3147.79 )
 
-[node name="CatSpawner7" parent="." index="7" instance=ExtResource( 2 )]
+[node name="CatSpawner7" parent="." index="14" instance=ExtResource( 3 )]
 
-position = Vector2( 3480, 3390 )
+position = Vector2( 3590.54, 3414.95 )
 
-[node name="CatSpawner8" parent="." index="8" instance=ExtResource( 2 )]
+[node name="CatSpawner8" parent="." index="15" instance=ExtResource( 3 )]
 
 position = Vector2( 6836.09, 5148.72 )
 
-[node name="CatSpawner9" parent="." index="9" instance=ExtResource( 2 )]
+[node name="CatSpawner9" parent="." index="16" instance=ExtResource( 3 )]
 
 position = Vector2( 7304.06, 5344.62 )
 
-[node name="CatSpawner10" parent="." index="10" instance=ExtResource( 2 )]
+[node name="CatSpawner10" parent="." index="17" instance=ExtResource( 3 )]
 
-position = Vector2( 8810, 1880 )
+position = Vector2( 8807.93, 1941.05 )
 
-[node name="CatSpawner11" parent="." index="11" instance=ExtResource( 2 )]
+[node name="CatSpawner11" parent="." index="18" instance=ExtResource( 3 )]
 
-position = Vector2( 11740, 4770 )
+position = Vector2( 11700, 4810.16 )
 
-[node name="CatSpawner12" parent="." index="12" instance=ExtResource( 2 )]
+[node name="CatSpawner12" parent="." index="19" instance=ExtResource( 3 )]
 
-position = Vector2( 11660, 4090 )
+position = Vector2( 11653.2, 4015.16 )
 
-[node name="CatSpawner13" parent="." index="13" instance=ExtResource( 2 )]
-
-position = Vector2( 3010, 6500 )
-
-[node name="CatSpawner14" parent="." index="14" instance=ExtResource( 2 )]
-
-position = Vector2( 2940, 7820 )
-
-[node name="StartRoom" type="Sprite" parent="." index="15"]
+[node name="StartRoom" type="Sprite" parent="." index="20"]
 
 editor/display_folded = true
 position = Vector2( 658.479, 594.225 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -159,11 +179,11 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -402.175, -149.987 )
 shape = SubResource( 1 )
 
-[node name="RoomBall" type="Sprite" parent="." index="16"]
+[node name="RoomBall" type="Sprite" parent="." index="21"]
 
 editor/display_folded = true
 position = Vector2( 3756.23, 1119.7 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Z Index" ]
 __meta__ = {
 "_edit_group_": true,
@@ -240,11 +260,11 @@ bounce = 0.0
 position = Vector2( -440, 70 )
 shape = SubResource( 1 )
 
-[node name="RoomKitchen" type="Sprite" parent="." index="17"]
+[node name="RoomKitchen" type="Sprite" parent="." index="22"]
 
 editor/display_folded = true
 position = Vector2( 747.647, 2790.72 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -322,11 +342,11 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -402.175, -149.987 )
 shape = SubResource( 1 )
 
-[node name="RoomSmall" type="Sprite" parent="." index="18"]
+[node name="RoomSmall" type="Sprite" parent="." index="23"]
 
 editor/display_folded = true
 position = Vector2( 3273.91, 3537.12 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -404,11 +424,11 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -402.175, -149.987 )
 shape = SubResource( 1 )
 
-[node name="RoomStudy" type="Sprite" parent="." index="19"]
+[node name="RoomStudy" type="Sprite" parent="." index="24"]
 
 editor/display_folded = true
 position = Vector2( 6814.56, 4759.77 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true,
@@ -541,11 +561,11 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -1307.15, 167.218, -1055.57, 347.979, -651.251, 214.41, -449.092, 506.818, -672.911, 647.608, -481.582, 701.758, -293.862, 647.608, -172.727, 687.777, -157.994, 1046.28, -1258.04, 1016.81 )
 
-[node name="RoomHall" type="Sprite" parent="." index="20"]
+[node name="RoomHall" type="Sprite" parent="." index="25"]
 
 editor/display_folded = true
 position = Vector2( 9018.28, 1549.55 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -655,11 +675,11 @@ position = Vector2( -409.4, -877.95 )
 scale = Vector2( 1, 1.64752 )
 shape = SubResource( 1 )
 
-[node name="RoomHall2" type="Sprite" parent="." index="21"]
+[node name="RoomHall2" type="Sprite" parent="." index="26"]
 
 editor/display_folded = true
 position = Vector2( 11908.2, 4439.48 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -769,7 +789,6 @@ position = Vector2( -409.4, -877.95 )
 scale = Vector2( 1, 1.64752 )
 shape = SubResource( 1 )
 
-[node name="RoomOrgan" type="Sprite" parent="." index="22"]
 
 position = Vector2( 2330, 7320 )
 scale = Vector2( 1.51167, 1.51167 )
