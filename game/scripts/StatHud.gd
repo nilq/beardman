@@ -13,6 +13,7 @@ func _ready():
 ## Getters and setters ##
 func _set_score(value):
 	_score += value
+	Globals.highscore = _score
 
 func _get_score():
 	return _score

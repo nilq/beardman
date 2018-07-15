@@ -72,8 +72,30 @@ func fire():
 	
 				meow.play()
 				splash.play()
-				print("a")
 				statHud.increment_score(10)
+				var new_blood = blood.duplicate()
+	
+				new_blood.set_rotation(rand_range(-360, 360))
+				new_blood.set_position(result.position)
+				var blood_file = "blood_" + str(ceil(rand_range(0.1, 2.9)))
+				new_blood.set_texture(load("res://sprites/cat/" + blood_file + ".png"))
+				self.get_node("../..").add_child(new_blood)
+				player.apply_damage(healingfactor)
+				result.collider.queue_free()
+				
+			if "Enemy_Barber" in result.collider.name:
+				var ugh   = $Ugh.duplicate()
+				var splash = $Splash.duplicate()
+	
+				ugh.set_pitch_scale(rand_range(0.95, 1.25))
+				splash.set_pitch_scale(rand_range(0.95, 1.25))
+				statHud.increment_score(25)
+				add_child(ugh)
+				add_child(splash)
+	
+				ugh.play()
+				splash.play()
+	
 				var new_blood = blood.duplicate()
 	
 				new_blood.set_rotation(rand_range(-360, 360))

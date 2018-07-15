@@ -2,7 +2,7 @@ extends Node
 
 
 var _sanityLevel = 100 setget sanity_set, sanity_get
-var _sanityDrainRate = 0.5
+var _sanityDrainRate = 3.5
 
 var _SanityBarSizeX
 var _SanityBarSizeY
