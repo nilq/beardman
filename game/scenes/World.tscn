@@ -90,7 +90,7 @@ rotation = -0.038534
 
 [node name="Door11" parent="Doors" index="14" instance=ExtResource( 1 )]
 
-position = Vector2( -64.521, 2596 )
+position = Vector2( -60.9111, 2574.34 )
 rotation = -3.12057
 
 [node name="Door12" parent="Doors" index="15" instance=ExtResource( 1 )]

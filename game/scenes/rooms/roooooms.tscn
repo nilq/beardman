@@ -16,9 +16,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 1074.94 )
+extents = Vector2( 10, 1443.36 )
 
-[node name="Rooms" type="Node"]
+[node name="Rooms" type="Node" index="0"]
 
 _sections_unfolded = [ "Z Index" ]
 
@@ -83,32 +83,45 @@ position = Vector2( 3010, 6500 )
 
 position = Vector2( 2940, 7820 )
 
-[node name="BarberSpawner" parent="." index="15" instance=ExtResource( 3 )]
+[node name="CatSpawner15" parent="." index="15" instance=ExtResource( 2 )]
+
+position = Vector2( 10500, 8390 )
+
+[node name="CatSpawner16" parent="." index="16" instance=ExtResource( 2 )]
+
+position = Vector2( 10830, 7500 )
+
+[node name="BarberSpawner" parent="." index="17" instance=ExtResource( 3 )]
 
 position = Vector2( 390, 440 )
 scale = Vector2( 1.51167, 1.51167 )
 
-[node name="BarberSpawner2" parent="." index="16" instance=ExtResource( 3 )]
+[node name="BarberSpawner2" parent="." index="18" instance=ExtResource( 3 )]
 
 position = Vector2( 770, 3120 )
 scale = Vector2( 1.51167, 1.51167 )
 
-[node name="BarberSpawner3" parent="." index="17" instance=ExtResource( 3 )]
+[node name="BarberSpawner3" parent="." index="19" instance=ExtResource( 3 )]
 
 position = Vector2( 4070, 1060 )
 scale = Vector2( 1.51167, 1.51167 )
 
-[node name="BarberSpawner4" parent="." index="18" instance=ExtResource( 3 )]
+[node name="BarberSpawner4" parent="." index="20" instance=ExtResource( 3 )]
 
 position = Vector2( 5950, 4570 )
 scale = Vector2( 1.51167, 1.51167 )
 
-[node name="BarberSpawner5" parent="." index="19" instance=ExtResource( 3 )]
+[node name="BarberSpawner5" parent="." index="21" instance=ExtResource( 3 )]
 
 position = Vector2( 2380, 6760 )
 scale = Vector2( 1.51167, 1.51167 )
 
-[node name="StartRoom" type="Sprite" parent="." index="20"]
+[node name="BarberSpawner6" parent="." index="22" instance=ExtResource( 3 )]
+
+position = Vector2( 9420, 7510 )
+scale = Vector2( 1.51167, 1.51167 )
+
+[node name="StartRoom" type="Sprite" parent="." index="23"]
 
 editor/display_folded = true
 position = Vector2( 658.479, 594.225 )
@@ -186,7 +199,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -402.175, -149.987 )
 shape = SubResource( 1 )
 
-[node name="RoomBall" type="Sprite" parent="." index="21"]
+[node name="RoomBall" type="Sprite" parent="." index="24"]
 
 editor/display_folded = true
 position = Vector2( 3756.23, 1119.7 )
@@ -267,7 +280,7 @@ bounce = 0.0
 position = Vector2( -440, 70 )
 shape = SubResource( 1 )
 
-[node name="RoomKitchen" type="Sprite" parent="." index="22"]
+[node name="RoomKitchen" type="Sprite" parent="." index="25"]
 
 editor/display_folded = true
 position = Vector2( 747.647, 2790.72 )
@@ -349,7 +362,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -402.175, -149.987 )
 shape = SubResource( 1 )
 
-[node name="RoomSmall" type="Sprite" parent="." index="23"]
+[node name="RoomSmall" type="Sprite" parent="." index="26"]
 
 position = Vector2( 3273.91, 3537.12 )
 texture = ExtResource( 7 )
@@ -429,7 +442,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -402.175, -149.987 )
 shape = SubResource( 1 )
 
-[node name="RoomStudy" type="Sprite" parent="." index="24"]
+[node name="RoomStudy" type="Sprite" parent="." index="27"]
 
 editor/display_folded = true
 position = Vector2( 6814.56, 4759.77 )
@@ -566,9 +579,8 @@ bounce = 0.0
 build_mode = 0
 polygon = PoolVector2Array( -1307.15, 167.218, -1055.57, 347.979, -651.251, 214.41, -449.092, 506.818, -672.911, 647.608, -481.582, 701.758, -293.862, 647.608, -172.727, 687.777, -157.994, 1046.28, -1258.04, 1016.81 )
 
-[node name="RoomHall" type="Sprite" parent="." index="25"]
+[node name="RoomHall" type="Sprite" parent="." index="28"]
 
-editor/display_folded = true
 position = Vector2( 9018.28, 1549.55 )
 texture = ExtResource( 9 )
 __meta__ = {
@@ -622,7 +634,8 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomHall/StaticBody2D12" index="0"]
 
-position = Vector2( -440, 70 )
+position = Vector2( -440, 260.254 )
+scale = Vector2( 1, 0.86846 )
 shape = SubResource( 1 )
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="RoomHall" index="3"]
@@ -657,8 +670,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomHall/StaticBody2D11" index="0"]
 
-position = Vector2( 398.306, 36.8586 )
-scale = Vector2( 1, 0.568606 )
+position = Vector2( 398.306, 149.729 )
+scale = Vector2( 1, 0.490568 )
 shape = SubResource( 1 )
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="RoomHall" index="5"]
@@ -680,9 +693,8 @@ position = Vector2( -409.4, -877.95 )
 scale = Vector2( 1, 1.64752 )
 shape = SubResource( 1 )
 
-[node name="RoomHall2" type="Sprite" parent="." index="26"]
+[node name="RoomHall2" type="Sprite" parent="." index="29"]
 
-editor/display_folded = true
 position = Vector2( 11908.2, 4439.48 )
 texture = ExtResource( 10 )
 __meta__ = {
@@ -692,6 +704,7 @@ __meta__ = {
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="RoomHall2" index="0"]
 
+editor/display_folded = true
 position = Vector2( -1220.44, -271.04 )
 input_pickable = false
 collision_layer = 1
@@ -708,6 +721,7 @@ shape = SubResource( 1 )
 
 [node name="StaticBody2D13" type="StaticBody2D" parent="RoomHall2" index="1"]
 
+editor/display_folded = true
 position = Vector2( 732.563, 779.467 )
 input_pickable = false
 collision_layer = 1
@@ -736,7 +750,8 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomHall2/StaticBody2D12" index="0"]
 
-position = Vector2( -440, 70 )
+position = Vector2( -439.053, 263.518 )
+scale = Vector2( 1, 0.866862 )
 shape = SubResource( 1 )
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="RoomHall2" index="3"]
@@ -771,12 +786,13 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomHall2/StaticBody2D11" index="0"]
 
-position = Vector2( 398.306, 36.8586 )
-scale = Vector2( 1, 0.568606 )
+position = Vector2( 398.306, 146.933 )
+scale = Vector2( 1, 0.492501 )
 shape = SubResource( 1 )
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="RoomHall2" index="5"]
 
+editor/display_folded = true
 position = Vector2( -960.442, -163.04 )
 rotation = 1.5708
 input_pickable = false
@@ -794,7 +810,7 @@ position = Vector2( -409.4, -877.95 )
 scale = Vector2( 1, 1.64752 )
 shape = SubResource( 1 )
 
-[node name="RoomOrgan" type="Sprite" parent="." index="27"]
+[node name="RoomOrgan" type="Sprite" parent="." index="30"]
 
 editor/display_folded = true
 position = Vector2( 2330, 7320 )
