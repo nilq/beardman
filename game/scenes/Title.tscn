@@ -45,7 +45,7 @@ _sections_unfolded = [ "Pause" ]
 position = Vector2( 980, 719 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 3
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 

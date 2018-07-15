@@ -7,9 +7,12 @@
 
 [node name="World" type="Node2D" index="0"]
 
-position = Vector2( 2170.79, 1029.83 )
+position = Vector2( 2153.36, 1040.27 )
 z_index = -100
 _sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Doors" type="Node2D" parent="." index="0"]
 
@@ -27,7 +30,7 @@ rotation = -1.56981
 
 [node name="Door5" parent="Doors" index="2" instance=ExtResource( 1 )]
 
-position = Vector2( 10134, 2647.68 )
+position = Vector2( 10134, 2658.68 )
 rotation = -4.68708
 
 [node name="Door6" parent="Doors" index="3" instance=ExtResource( 1 )]
@@ -60,42 +63,62 @@ rotation = 0.0638884
 position = Vector2( 4561.8, 3452.06 )
 rotation = -4.6799
 
-[node name="Door10" parent="Doors" index="9" instance=ExtResource( 1 )]
+[node name="Door20" parent="Doors" index="9" instance=ExtResource( 1 )]
+
+position = Vector2( 8694.01, 7110.93 )
+rotation = -4.73629
+
+[node name="Door23" parent="Doors" index="10" instance=ExtResource( 1 )]
+
+position = Vector2( 7271.67, 7984.55 )
+rotation = -3.14311
+
+[node name="Door22" parent="Doors" index="11" instance=ExtResource( 1 )]
+
+position = Vector2( 8315.13, 6327.08 )
+rotation = -6.26951
+
+[node name="Door21" parent="Doors" index="12" instance=ExtResource( 1 )]
+
+position = Vector2( 5841.12, 7151.93 )
+rotation = -7.86125
+
+[node name="Door10" parent="Doors" index="13" instance=ExtResource( 1 )]
 
 position = Vector2( 2824.9, 2100.83 )
 rotation = -0.038534
 
-[node name="Door11" parent="Doors" index="10" instance=ExtResource( 1 )]
+[node name="Door11" parent="Doors" index="14" instance=ExtResource( 1 )]
 
 position = Vector2( -64.521, 2596 )
 rotation = -3.12057
 
-[node name="Door12" parent="Doors" index="11" instance=ExtResource( 1 )]
+[node name="Door12" parent="Doors" index="15" instance=ExtResource( 1 )]
 
 position = Vector2( 283.734, 2508.94 )
 rotation = -4.67193
 
-[node name="Door13" parent="Doors" index="12" instance=ExtResource( 1 )]
+[node name="Door13" parent="Doors" index="16" instance=ExtResource( 1 )]
 
 position = Vector2( -57.6379, 1135.15 )
 rotation = 0.0179651
 
-[node name="Door14" parent="Doors" index="13" instance=ExtResource( 1 )]
+[node name="Door14" parent="Doors" index="17" instance=ExtResource( 1 )]
 
 position = Vector2( 7265.15, -255.335 )
 rotation = -4.70748
 
-[node name="Door15" parent="Doors" index="14" instance=ExtResource( 1 )]
+[node name="Door15" parent="Doors" index="18" instance=ExtResource( 1 )]
 
 position = Vector2( 4133.85, -252.967 )
 rotation = -1.56981
 
-[node name="Door16" parent="Doors" index="15" instance=ExtResource( 1 )]
+[node name="Door16" parent="Doors" index="19" instance=ExtResource( 1 )]
 
 position = Vector2( 175.551, 209.727 )
 rotation = -3.1534
 
-[node name="Door17" parent="Doors" index="16" instance=ExtResource( 1 )]
+[node name="Door17" parent="Doors" index="20" instance=ExtResource( 1 )]
 
 position = Vector2( 162.198, -1290.82 )
 rotation = 0.0114646

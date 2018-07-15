@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/player_collection/PlayerController.gd" type="Script" id=1]
 [ext_resource path="res://sprites/leftleg.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://sound/splash.wav" type="AudioStream" id=12]
 [ext_resource path="res://scenes/Sanity.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/TimePlayed.tscn" type="PackedScene" id=14]
+[ext_resource path="res://sound/door.wav" type="AudioStream" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -35,7 +36,7 @@ custom_solver_bias = 0.0
 radius = 20.782
 height = 9.56995
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 position = Vector2( 1066.48, 592.146 )
 rotation = -0.862941
@@ -54,7 +55,6 @@ scale = Vector2( 0.5, 0.5 )
 z_index = 1
 frames = SubResource( 1 )
 animation = "walking"
-frame = 1
 playing = true
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -75,6 +75,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Beard" type="Sprite" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 39.3419, 103.27 )
 rotation = -1.5708
 scale = Vector2( 0.407535, 0.376114 )
@@ -185,5 +186,16 @@ _sections_unfolded = [ "Material", "Offset", "Transform" ]
 [node name="Sanity" parent="." index="5" instance=ExtResource( 13 )]
 
 [node name="StatHud" parent="." index="6" instance=ExtResource( 14 )]
+
+[node name="Door" type="AudioStreamPlayer2D" parent="." index="7"]
+
+stream = ExtResource( 15 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 
