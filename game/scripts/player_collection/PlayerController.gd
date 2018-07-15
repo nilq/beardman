@@ -42,6 +42,13 @@ func _physics_process(delta):
 			door = collision.collider.get_door()
 			
 			if door != collision.collider:
+				var door_sound = $Door.duplicate()
+				
+				door_sound.set_pitch_scale(rand_range(0.75, 1))
+				door_sound.play()
+				
+				add_child(door_sound)
+				
 				self.set_rotation(door.get_rotation() - 90)
 				self.set_global_position(door.get_global_position())
 		else:
