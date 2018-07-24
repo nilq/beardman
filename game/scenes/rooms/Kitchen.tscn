@@ -1,0 +1,127 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://sprites/rooms/room_kitchen.png" type="Texture" id=1]
+[ext_resource path="res://scenes/enemy/CatSpawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Spawner.gd" type="Script" id=3]
+[ext_resource path="res://scenes/enemy/BarberSpawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/SpawnerB.gd" type="Script" id=5]
+
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 1443.36 )
+
+[node name="RoomKitchen" type="Sprite"]
+
+editor/display_folded = true
+position = Vector2( 370, 3520 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( -113.286, -44.0234 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" index="0"]
+
+position = Vector2( -440, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 314.713, -36.0234 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" index="0"]
+
+position = Vector2( 422.664, 74.5439 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( -25.2864, 391.975 )
+rotation = 1.5708
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" index="0"]
+
+position = Vector2( 435.048, -32 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( -169.286, -384.022 )
+rotation = 1.5708
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8" index="0"]
+
+position = Vector2( -402.175, -149.987 )
+shape = SubResource( 1 )
+
+[node name="CatSpawner5" type="Node2D" parent="." index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 22.353, 609.28 )
+z_index = 1
+script = ExtResource( 3 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CatSpawner6" type="Node2D" parent="." index="5" instance=ExtResource( 2 )]
+
+position = Vector2( -217.647, 289.28 )
+z_index = 1
+script = ExtResource( 3 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BarberSpawner2" type="Node2D" parent="." index="6" instance=ExtResource( 4 )]
+
+position = Vector2( 22.353, 329.28 )
+scale = Vector2( 1.51167, 1.51167 )
+z_index = 1
+script = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+

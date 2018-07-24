@@ -1,0 +1,111 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/rooms/room_ballroom.png" type="Texture" id=1]
+[ext_resource path="res://scenes/enemy/BarberSpawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/enemy/CatSpawner.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 1443.36 )
+
+[node name="RoomBall" type="Sprite" index="0"]
+
+position = Vector2( 3756.23, 1119.7 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( -3756.23, -1119.7 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 4335.78, 279.494, 4613.29, 361.116, 4792.86, 453.622, 4939.78, 605.983, 5015.96, 807.318, 5037.73, 1008.65, 5054.05, 1280.73, 5032.29, 1416.76, 4950.66, 1607.22, 4841.83, 1781.34, 4711.24, 1901.06, 4575.2, 1939.15, 4335.78, 1971.79, 4411.96, 2091.51, 4765.65, 2004.44, 5108.47, 1612.66, 5184.65, 1046.74, 5064.94, 551.568, 4711.24, 246.845, 4352.1, 165.223 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( -892.07, -23.7358 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" index="0"]
+
+position = Vector2( -440, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( -298.949, -382.873 )
+rotation = 1.56865
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" index="0"]
+
+position = Vector2( -440, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( -445.869, 427.907 )
+rotation = 4.69789
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" index="0"]
+
+position = Vector2( -440, 70 )
+shape = SubResource( 1 )
+
+[node name="BarberSpawner" parent="." index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 933.77, 590.3 )
+
+[node name="CatSpawner" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 353.77, -289.7 )
+
+[node name="CatSpawner2" parent="." index="6" instance=ExtResource( 3 )]
+
+position = Vector2( 503.77, 260.3 )
+
+[node name="CatSpawner3" parent="." index="7" instance=ExtResource( 3 )]
+
+position = Vector2( 863.77, -549.7 )
+
+[node name="CatSpawner4" parent="." index="8" instance=ExtResource( 3 )]
+
+position = Vector2( -1116.23, -579.7 )
+
+

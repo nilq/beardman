@@ -1,0 +1,150 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/rooms/room_hallway2.png" type="Texture" id=1]
+[ext_resource path="res://scenes/enemy/CatSpawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Spawner.gd" type="Script" id=3]
+
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 1443.36 )
+
+[node name="RoomHall2" type="Sprite"]
+
+editor/display_folded = true
+position = Vector2( 11470, 4470 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( -1220.44, -271.04 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10" index="0"]
+
+position = Vector2( -440, 70 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 732.563, 779.467 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D13" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -1231.16, -483.333, -1180.62, -349.763, -1050.66, -252.294, -862.937, -241.464, -747.417, -288.394, -664.388, -360.593, -664.388, -447.233, -584.968, -302.834, -693.268, -151.214, -1007.34, -60.9644, -1220.33, -208.974, -1296.14, -328.104 )
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="." index="2"]
+
+position = Vector2( 1064.68, -112.201 )
+rotation = -1.57092
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12" index="0"]
+
+position = Vector2( -439.053, 263.518 )
+scale = Vector2( 1, 0.866862 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 1259.55, -199.04 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" index="0"]
+
+position = Vector2( 422.664, 74.5439 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="." index="4"]
+
+position = Vector2( -1065.38, -96.557 )
+rotation = 1.5708
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11" index="0"]
+
+position = Vector2( 398.306, 146.933 )
+scale = Vector2( 1, 0.492501 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( -960.442, -163.04 )
+rotation = 1.5708
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9" index="0"]
+
+position = Vector2( -409.4, -877.95 )
+scale = Vector2( 1, 1.64752 )
+shape = SubResource( 1 )
+
+[node name="CatSpawner11" type="Node2D" parent="." index="6" instance=ExtResource( 2 )]
+
+position = Vector2( -168.2, 330.52 )
+z_index = 1
+script = ExtResource( 3 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CatSpawner12" type="Node2D" parent="." index="7" instance=ExtResource( 2 )]
+
+position = Vector2( -248.2, -349.48 )
+z_index = 1
+script = ExtResource( 3 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+
