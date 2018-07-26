@@ -34,5 +34,4 @@ func increment_timeplayed():
 	
 func increment_score(value):
 	_set_score(value)
-	print(value)
 	get_node("Score").set_text("Score: " + str(_get_score()))

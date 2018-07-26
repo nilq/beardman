@@ -23,7 +23,6 @@ func start_timer():
 
 func spawn_barber(timer):
 	if self.get_global_position().distance_to(player.get_global_position()) < 2600:
-		print("insert barber here")
 		for i in range(1, 2):
 			var barber = enemy_barber.duplicate()
 			barber.set_position(self.get_position() + Vector2(rand_range(-barber_range, barber_range), rand_range(-barber_range, barber_range)))
