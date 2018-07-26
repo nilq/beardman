@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var world = get_node("..")
-onready var enemy_barber = preload( "res://scenes/Barber.tscn" ).instance()
+onready var enemy_barber = preload( "res://scenes/enemy/Barber.tscn" ).instance()
 
 onready var player = world.get_node("Player")
 

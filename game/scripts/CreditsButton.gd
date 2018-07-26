@@ -16,4 +16,4 @@ func _ready():
 
 
 func _on_TextureButton_pressed():
-  get_tree().change_scene("res://scenes/Credits.tscn")
+  get_tree().change_scene("res://scenes/screens/Credits.tscn")

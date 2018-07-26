@@ -16,4 +16,4 @@ func _ready():
 
 
 func _on_TextureButton_pressed():
-  get_tree().change_scene("res://scenes/World.tscn")
+  get_tree().change_scene("res://scenes/screens/World.tscn")

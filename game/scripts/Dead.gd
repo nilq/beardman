@@ -7,4 +7,4 @@ func _ready():
 	get_node("Number").set_text(str(Globals.highscore)) 
 	
 func restart():
-	get_tree().change_scene("res://scenes/World.tscn")
+	get_tree().change_scene("res://scenes/screens/World.tscn")

@@ -4,7 +4,7 @@ onready var BEARD_POS   = self.get_position()
 onready var BEARD_SCALE = Vector2(self.get_scale().x, self.get_scale().y / 1.25)
 
 
-onready var blood = preload( "res://scenes/blood.tscn" ).instance()
+onready var blood = preload( "res://scenes/enemy/blood.tscn" ).instance()
 
 onready var player = self.get_node("..")
 onready var statHud = player.get_node("StatHud")

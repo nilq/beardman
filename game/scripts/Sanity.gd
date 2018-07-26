@@ -21,7 +21,7 @@ func sanity_set(sanityLevel):
 	_sanityLevel = sanityLevel
 	
 	if _sanityLevel < 0:
-		get_tree().change_scene("res://scenes/Dead.tscn")
+		get_tree().change_scene("res://scenes/screens/Dead.tscn")
 		
 	if _sanityLevel > 100:
 		_sanityLevel = 100

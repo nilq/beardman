@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="To Beard or Not to Beard"
-run/main_scene="res://scenes/Title.tscn"
+run/main_scene="res://scenes/screens/Title.tscn"
 config/icon="res://sprites/upperbody.png"
 
 [autoload]
